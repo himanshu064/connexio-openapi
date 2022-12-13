@@ -1,0 +1,20 @@
+{
+  "name": "connexio-openapi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://himanshu064: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@github.com/himanshu064/connexio-openapi.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/himanshu064/connexio-openapi/issues"
+  },
+  "homepage": "https://github.com/himanshu064/connexio-openapi#readme"
+}
