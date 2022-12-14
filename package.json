@@ -4,11 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon app.js",
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://himanshu064: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@github.com/himanshu064/connexio-openapi.git"
+    "url": "https://github.com/himanshu064/connexio-openapi.git"
   },
   "keywords": [],
   "author": "",
@@ -16,5 +17,16 @@
   "bugs": {
     "url": "https://github.com/himanshu064/connexio-openapi/issues"
   },
-  "homepage": "https://github.com/himanshu064/connexio-openapi#readme"
+  "homepage": "https://github.com/himanshu064/connexio-openapi#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "morgan": "^1.10.0",
+    "swagger-jsdoc": "^6.2.5",
+    "swagger-ui-express": "^4.6.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
 }
