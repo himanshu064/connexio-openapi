@@ -1,0 +1,31 @@
+exports.user_groups_enum = [
+  "3",
+  "4",
+  "9",
+  "10",
+  "11",
+  "12",
+  "13",
+  "14",
+  "19",
+  "26",
+  "27",
+  "28",
+  "32",
+];
+
+exports.user_groups_enum_titles = [
+  "full admin group",
+  "employee group",
+  "no acis on ws",
+  "demo_client_2_client_employee",
+  "demo_client_2_client_employee_admin",
+  "demo_client_2_client_manager",
+  "demo_client_2_client_manager_admin",
+  "demo_client_2_staff_manager",
+  "created_by_client_admin",
+  "test group",
+  "Support",
+  "Customer Service",
+  "netweb",
+];

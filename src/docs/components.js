@@ -1,5 +1,9 @@
+const { schemas, requestBodies } = require("../modules");
+
 module.exports = {
   components: {
+    schemas,
+    requestBodies,
     securitySchemes: {
       bearerAuth: {
         type: "apiKey",
