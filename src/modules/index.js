@@ -2,12 +2,15 @@ const backoffice = require("./backoffice");
 
 module.exports = {
   schemas: {
-    ...backoffice.userSchemas,
+    ...backoffice.User.userSchemas,
+    ...backoffice.Auth.authSchemas,
   },
   paths: {
-    ...backoffice.userApis,
+    ...backoffice.User.userApis,
+    ...backoffice.Auth.authApis,
   },
   requestBodies: {
-    ...backoffice.userBody,
+    ...backoffice.User.userBody,
+    ...backoffice.Auth.authBody,
   },
 };

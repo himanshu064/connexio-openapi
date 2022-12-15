@@ -1,7 +1,7 @@
 const { info, openapi } = require("./info");
 const { servers } = require("./servers");
 const { components } = require("./components");
-const { bearerAuth } = require("./auth");
+const { security } = require("./security");
 const { paths } = require("../modules");
 
 const definition = {
@@ -10,7 +10,7 @@ const definition = {
   servers,
   components,
   paths,
-  bearerAuth,
+  security,
 };
 
 module.exports = definition;

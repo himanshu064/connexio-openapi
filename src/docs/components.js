@@ -5,11 +5,22 @@ module.exports = {
     schemas,
     requestBodies,
     securitySchemes: {
-      bearerAuth: {
+      // bearerAuth: {
+      //   type: "apiKey",
+      //   name: "Authorization",
+      //   scheme: "Authorization",
+      //   in: "header",
+      //   name: 'X-API-KEY',
+      // },
+      cookieAuth: {
         type: "apiKey",
-        name: "Authorization",
-        scheme: "Authorization",
+        in: "cookie",
+        name: "set-cookie"
+      },
+      csrfTokenAuth: {
+        type: "apiKey",
         in: "header",
+        name: "X-CSRF-TOKEN",
       },
     },
   },
