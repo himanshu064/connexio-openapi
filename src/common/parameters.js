@@ -20,4 +20,11 @@ module.exports = {
     required: true,
     schemaType: "string",
   },
+  roleIdParam: {
+    name: "groupId",
+    param_in: "path",
+    description: "Group Id",
+    required: true,
+    schemaType: "string",
+  },
 };

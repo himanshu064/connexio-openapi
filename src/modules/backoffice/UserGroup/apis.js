@@ -11,7 +11,7 @@ const paths = {
   ...generateEndpoint({
     endpoint: "/client_user_groups/{clientId}",
     methods: {
-      // get client users
+      // get client user groups
       ...generatePath({
         method: "get",
         tags: ["client_user_groups"],
@@ -25,7 +25,7 @@ const paths = {
         },
         parameters: createPathParameter(clientIdParam),
       }),
-      // create client user
+      // create client user group
       ...generatePath({
         method: "post",
         tags: ["client_user_groups"],
@@ -52,6 +52,11 @@ const paths = {
         parameters: [
           createPathParameter(clientIdParam),
         ],
+        requestBody: createRequestBody({
+          description: "Request payload for delete client user group",
+          required: true,
+          contentRef: "#/components/requestBodies/deleteUserGroupPayload",
+        }),
         responses: {
           ...createResponse({
             status: "202",
@@ -62,25 +67,25 @@ const paths = {
       }),
     },
   }),
-  // update single client user
+  // update single client user group
   ...generateEndpoint({
     endpoint: "/client_user_groups/{clientId}/{groupId}",
     methods: {
       ...generatePath({
         method: "patch",
         tags: ["client_user_groups"],
-        summary: "Update a client user in system",
+        summary: "Update a client user group in system",
         responses: {
           ...createResponse({
             status: "200",
             description: "OK",
-            schemaRef: "#/components/schemas/ClientUser",
+            schemaRef: "#/components/schemas/ClientUserUserGroup",
           }),
         },
         requestBody: createRequestBody({
-          description: "Request payload to create client user",
+          description: "Request payload to update client user",
           required: true,
-          contentRef: "#/components/schemas/ClientUser",
+          contentRef: "#/components/schemas/ClientUserGroup",
         }),
         parameters: [
           createPathParameter(clientIdParam),

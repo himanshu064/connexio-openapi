@@ -1,4 +1,4 @@
-const AuthLogin = {
+const authLoginPayload = {
   title: "",
   type: "object",
   properties: {
@@ -13,5 +13,5 @@ const AuthLogin = {
 };
 
 module.exports = {
-  AuthLogin,
+  authLoginPayload,
 };

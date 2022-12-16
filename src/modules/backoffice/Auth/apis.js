@@ -18,7 +18,7 @@ const paths = {
         requestBody: createRequestBody({
           description: "Request payload for login",
           required: true,
-          contentRef: "#/components/requestBodies/AuthLogin",
+          contentRef: "#/components/requestBodies/authLoginPayload",
         }),
         responses: {
           ...createResponse({
