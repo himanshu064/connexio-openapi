@@ -1,8 +1,7 @@
 module.exports = {
   security: [
     {
-      csrfTokenAuth: [],
-      cookieAuth: [],
+      ApiTokenKey: [],
     },
   ],
 };

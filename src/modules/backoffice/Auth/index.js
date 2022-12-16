@@ -1,5 +1,5 @@
-const authApis = require("./apis");
-const authSchemas = require("./schemas");
-const authBody = require("./body");
+const apis = require("./apis");
+const schemas = require("./schemas");
+const body = require("./body");
 
-module.exports = { authApis, authSchemas, authBody };
+module.exports = { apis, schemas, body };

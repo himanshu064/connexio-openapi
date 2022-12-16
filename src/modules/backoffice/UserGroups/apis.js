@@ -1,4 +1,4 @@
-const { clientIdParam, userIdParam } = require("../../../common/parameters");
+const { clientIdParam, groupIdParam } = require("../../../common/parameters");
 const {
   generateEndpoint,
   generatePath,
@@ -9,18 +9,18 @@ const {
 
 const paths = {
   ...generateEndpoint({
-    endpoint: "/client_users/{clientId}",
+    endpoint: "/client_user_groups/{clientId}",
     methods: {
       // get client users
       ...generatePath({
         method: "get",
-        tags: ["client_user"],
-        summary: "Get all client users in system",
+        tags: ["client_user_groups"],
+        summary: "Get all client user group in system",
         responses: {
           ...createResponse({
             status: "200",
             description: "OK",
-            schemaRef: "#/components/schemas/ClientUsers",
+            schemaRef: "#/components/schemas/ClientUserGroups",
           }),
         },
         parameters: createPathParameter(clientIdParam),
@@ -28,19 +28,35 @@ const paths = {
       // create client user
       ...generatePath({
         method: "post",
-        tags: ["client_user"],
+        tags: ["client_user_groups"],
         summary: "Creates a new client users in system",
         requestBody: createRequestBody({
           description: "Request payload to create client user",
           required: true,
-          contentRef: "#/components/schemas/ClientUser",
+          contentRef: "#/components/schemas/ClientUserGroup",
         }),
         parameters: createPathParameter(clientIdParam),
         responses: {
           ...createResponse({
-            status: "200",
+            status: "201",
             description: "OK",
-            schemaRef: "#/components/schemas/ClientUser",
+            schemaRef: "#/components/schemas/ClientUserGroup",
+          }),
+        },
+      }),
+      // delete client user group
+      ...generatePath({
+        method: "delete",
+        tags: ["client_user_groups"],
+        summary: "Deletes a client user group in system",
+        parameters: [
+          createPathParameter(clientIdParam),
+        ],
+        responses: {
+          ...createResponse({
+            status: "202",
+            description: "OK",
+            schemaRef: "#/components/schemas/ClientUserGroup",
           }),
         },
       }),
@@ -48,11 +64,11 @@ const paths = {
   }),
   // update single client user
   ...generateEndpoint({
-    endpoint: "/client_users/{clientId}/{userId}",
+    endpoint: "/client_user_groups/{clientId}/{groupId}",
     methods: {
       ...generatePath({
         method: "patch",
-        tags: ["client_user"],
+        tags: ["client_user_groups"],
         summary: "Update a client user in system",
         responses: {
           ...createResponse({
@@ -68,35 +84,8 @@ const paths = {
         }),
         parameters: [
           createPathParameter(clientIdParam),
-          createPathParameter(userIdParam),
+          createPathParameter(groupIdParam),
         ],
-      }),
-    },
-  }),
-  // deactivate client user
-  ...generateEndpoint({
-    endpoint: "/client_users/{clientId}/{userId}/deactivate_user",
-    methods: {
-      ...generatePath({
-        method: "post",
-        tags: ["client_user"],
-        summary: "Deactivate a client user in system",
-        parameters: [
-          createPathParameter(clientIdParam),
-          createPathParameter(userIdParam),
-        ],
-        requestBody: createRequestBody({
-          description: "Request payload to deactivate client user",
-          required: true,
-          contentRef: "#/components/requestBodies/DeactivateClientUser",
-        }),
-        responses: {
-          ...createResponse({
-            status: "202",
-            description: "OK",
-            schemaRef: "#/components/schemas/ClientUser",
-          }),
-        },
       }),
     },
   }),

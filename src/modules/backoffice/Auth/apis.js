@@ -8,7 +8,7 @@ const {
 
 const paths = {
   ...generateEndpoint({
-    endpoint: "/auth",
+    endpoint: "/access_token_auth",
     methods: {
       // login and get the token
       ...generatePath({
