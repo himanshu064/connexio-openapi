@@ -1,11 +1,15 @@
 const Auth = require("./Auth");
-const User = require("./User");
+const ClientUser = require("./ClientUser");
 const UserGroup = require("./UserGroup");
 const Role = require("./Role");
+const MailingConfigurations = require("./MailingConfigurations");
+const Clients = require("./Clients");
 
 module.exports = {
   Auth,
-  User,
+  ClientUser,
   UserGroup,
-  Role
+  Role,
+  MailingConfigurations,
+  Clients
 };

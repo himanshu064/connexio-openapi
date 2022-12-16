@@ -83,7 +83,7 @@ const paths = {
           }),
         },
         requestBody: createRequestBody({
-          description: "Request payload to create client user",
+          description: "Request payload to update client role",
           required: true,
           contentRef: "#/components/schemas/Role",
         }),
