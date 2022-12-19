@@ -2,7 +2,7 @@ const Auth = require("./Auth");
 const ClientUser = require("./ClientUser");
 const UserGroup = require("./UserGroup");
 const Role = require("./Role");
-const MailingConfigurations = require("./MailingConfigurations");
+const MailingConfiguration = require("./MailingConfiguration");
 const UserSelf = require("./Self");
 
 module.exports = {
@@ -10,6 +10,6 @@ module.exports = {
   ClientUser,
   UserGroup,
   Role,
-  MailingConfigurations,
+  MailingConfiguration,
   UserSelf,
 };

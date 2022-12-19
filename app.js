@@ -12,5 +12,12 @@ app.use(express.urlencoded({ extended: false }));
 app.use(morgan("dev"));
 
 const swaggerDocument = require("./src/docs");
+
 app.use("/docs", swaggerUI.serve, swaggerUI.setup(swaggerDocument));
+
+app.use("/", (req, res) => {
+  res.send(
+    "Welcome to Connexio Open API!. Go to '/docs' to get all the documentation"
+  );
+});
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));

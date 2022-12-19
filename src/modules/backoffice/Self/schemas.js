@@ -60,7 +60,45 @@ const UISettings = {
   required: ["theme"],
 };
 
+const Notification = {
+  title: "",
+  type: "object",
+  properties: {
+    generated_at: {
+      title: "generated_at",
+      type: "string",
+    },
+    id: {
+      title: "id",
+      type: "integer",
+    },
+    micro_timestamp: {
+      title: "micro_timestamp",
+      type: "integer",
+    },
+    text: {
+      title: "text",
+      type: "string",
+    },
+    title: {
+      title: "title",
+      type: "string",
+    },
+    type: {
+      title: "type",
+      type: "string",
+    },
+  },
+};
+
+const Notifications = {
+  type: "array",
+  $ref: "#/components/schemas/Notification",
+};
+
 module.exports = {
   UserSelf,
   UISettings,
+  Notification,
+  Notifications,
 };

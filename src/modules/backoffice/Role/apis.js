@@ -1,10 +1,17 @@
-const { clientIdParam, groupIdParam, roleIdParam } = require("../../../common/parameters");
+const {
+  clientIdParam,
+  roleIdParam,
+  paginationLimitQuery,
+  paginationOffsetQuery,
+  searchQuery,
+} = require("../../../common/parameters");
 const {
   generateEndpoint,
   generatePath,
   createPathParameter,
   createResponse,
   createRequestBody,
+  createQueryParameter,
 } = require("../../../utils/path-utils");
 
 const paths = {
@@ -23,7 +30,12 @@ const paths = {
             schemaRef: "#/components/schemas/Roles",
           }),
         },
-        parameters: createPathParameter(clientIdParam),
+        parameters: [
+          createPathParameter(clientIdParam),
+          createQueryParameter(paginationLimitQuery),
+          createQueryParameter(paginationOffsetQuery),
+          createQueryParameter(searchQuery),
+        ],
       }),
       // create client roles
       ...generatePath({
@@ -33,14 +45,14 @@ const paths = {
         requestBody: createRequestBody({
           description: "Request payload to create client role",
           required: true,
-          contentRef: "#/components/schemas/Role",
+          contentRef: "#/components/schemas/RoleFormSchema",
         }),
         parameters: createPathParameter(clientIdParam),
         responses: {
           ...createResponse({
             status: "201",
             description: "OK",
-            schemaRef: "#/components/schemas/Role",
+            schemaRef: "#/components/schemas/RoleTableSchema",
           }),
         },
       }),
@@ -49,9 +61,7 @@ const paths = {
         method: "delete",
         tags: ["client_roles"],
         summary: "Deletes a client role in system",
-        parameters: [
-          createPathParameter(clientIdParam),
-        ],
+        parameters: [createPathParameter(clientIdParam)],
         requestBody: createRequestBody({
           description: "Request payload for delete role",
           required: true,
@@ -61,7 +71,7 @@ const paths = {
           ...createResponse({
             status: "202",
             description: "OK",
-            schemaRef: "#/components/schemas/Role",
+            schemaRef: "#/components/schemas/RoleTableSchema",
           }),
         },
       }),
@@ -79,13 +89,13 @@ const paths = {
           ...createResponse({
             status: "200",
             description: "OK",
-            schemaRef: "#/components/schemas/Role",
+            schemaRef: "#/components/schemas/RoleTableSchema",
           }),
         },
         requestBody: createRequestBody({
           description: "Request payload to update client role",
           required: true,
-          contentRef: "#/components/schemas/Role",
+          contentRef: "#/components/schemas/RoleFormSchema",
         }),
         parameters: [
           createPathParameter(clientIdParam),

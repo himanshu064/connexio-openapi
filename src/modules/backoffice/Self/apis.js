@@ -1,8 +1,6 @@
-const { clientIdParam, groupIdParam } = require("../../../common/parameters");
 const {
   generateEndpoint,
   generatePath,
-  createPathParameter,
   createResponse,
   createRequestBody,
 } = require("../../../utils/path-utils");
@@ -49,6 +47,24 @@ const paths = {
             status: "200",
             description: "OK",
             schemaRef: "#/components/schemas/UISettings",
+          }),
+        },
+      }),
+    },
+  }),
+  // get self notificationsa
+  ...generateEndpoint({
+    endpoint: "/notifications/all",
+    methods: {
+      ...generatePath({
+        method: "get",
+        tags: ["user_self"],
+        summary: "Get all user notifications",
+        responses: {
+          ...createResponse({
+            status: "200",
+            description: "OK",
+            schemaRef: "#/components/schemas/Notifications",
           }),
         },
       }),

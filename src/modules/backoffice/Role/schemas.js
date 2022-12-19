@@ -1,6 +1,10 @@
-const { manager_acis, employee_acis, olac_tablist_acis } = require("../../../constants/roles");
+const {
+  manager_acis,
+  employee_acis,
+  olac_tablist_acis,
+} = require("../../../constants/roles");
 
-const Role = {
+const RoleFormSchema = {
   title: "",
   type: "object",
   properties: {
@@ -102,12 +106,63 @@ const Role = {
   ],
 };
 
+const RoleTableSchema = {
+  type: "Role",
+  columns: [
+    {
+      type: "int",
+      label: "ID",
+      property_name: "id",
+      filterable: true,
+      sortable: true,
+      visible: false,
+      order: 1,
+    },
+    {
+      type: "string",
+      label: "Name",
+      property_name: "name",
+      filterable: false,
+      sortable: false,
+      visible: true,
+      order: 2,
+    },
+  ],
+  operations: [
+    {
+      title: "Create",
+      is_standard: true,
+      method: "POST",
+      key: "create",
+      route_suffix: "",
+      visible: false,
+    },
+    {
+      title: "Bulk delete",
+      is_standard: false,
+      key: "bulk_delete",
+      visible: false,
+    },
+    {
+      title: "Bulk edit",
+      is_standard: false,
+      key: "bulk_edit",
+      visible: false,
+    },
+  ],
+  size: 2,
+  polymorphic_crud_types: [],
+  primary_key: "id",
+  search: false,
+};
+
 const Roles = {
   type: "array",
   $ref: "#/components/schemas/Role",
 };
 
 module.exports = {
-  Role,
+  RoleFormSchema,
+  RoleTableSchema,
   Roles,
 };

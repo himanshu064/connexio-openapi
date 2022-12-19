@@ -7,7 +7,7 @@ const {
   user_groups_enum,
 } = require("../../../constants/user_groups");
 
-const ClientUser = {
+const ClientUserFormSchema = {
   title: "",
   type: "object",
   properties: {
@@ -152,12 +152,122 @@ const ClientUser = {
   ],
 };
 
+const ClientUserTableSchema = {
+  type: "ClientUser",
+  columns: [
+    {
+      type: "image",
+      label: "Picture",
+      property_name: "api_picture",
+      filterable: false,
+      sortable: false,
+      visible: true,
+      order: 0,
+    },
+    {
+      type: "int",
+      label: "ID",
+      property_name: "id",
+      filterable: true,
+      sortable: true,
+      visible: false,
+      order: 1,
+    },
+    {
+      type: "string",
+      label: "Name",
+      property_name: "name",
+      filterable: false,
+      sortable: false,
+      visible: true,
+      order: 2,
+    },
+    {
+      type: "string",
+      label: "Second Name",
+      property_name: "second_name",
+      filterable: false,
+      sortable: false,
+      visible: false,
+    },
+    {
+      type: "string",
+      label: "Preferred Name",
+      property_name: "preferred_name",
+      filterable: false,
+      sortable: false,
+      visible: false,
+    },
+    {
+      type: "string",
+      label: "Last Name",
+      property_name: "last_name",
+      filterable: false,
+      sortable: false,
+      visible: true,
+    },
+    {
+      type: "string",
+      label: "Username",
+      property_name: "username",
+      filterable: true,
+      sortable: true,
+      visible: true,
+    },
+    {
+      type: "email",
+      label: "Email",
+      property_name: "email",
+      filterable: true,
+      sortable: false,
+      visible: false,
+    },
+    {
+      type: "string",
+      label: "Gender",
+      property_name: "gender",
+      filterable: false,
+      sortable: false,
+      visible: true,
+    },
+    {
+      type: "status",
+      label: "Status",
+      property_name: "active_status",
+      filterable: false,
+      sortable: false,
+      visible: true,
+    },
+  ],
+  operations: [
+    {
+      title: "Create",
+      is_standard: true,
+      method: "POST",
+      key: "create",
+      route_suffix: "",
+      visible: false,
+    },
+    {
+      title: "Bulk edit",
+      is_standard: false,
+      key: "bulk_edit",
+      visible: false,
+    },
+  ],
+  size: 10,
+  polymorphic_crud_types: [],
+  primary_key: "id",
+  search: true,
+};
+
 const ClientUsers = {
   type: "array",
-  $ref: "#/components/schemas/ClientUser",
+  $ref: "#/components/schemas/ClientUserTableSchema",
 };
 
 module.exports = {
-  ClientUser,
+  ClientUserFormSchema,
+  ClientUserTableSchema,
   ClientUsers,
 };

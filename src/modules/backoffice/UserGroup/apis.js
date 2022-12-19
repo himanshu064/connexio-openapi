@@ -1,10 +1,17 @@
-const { clientIdParam, groupIdParam } = require("../../../common/parameters");
+const {
+  clientIdParam,
+  groupIdParam,
+  paginationLimitQuery,
+  paginationOffsetQuery,
+  searchQuery,
+} = require("../../../common/parameters");
 const {
   generateEndpoint,
   generatePath,
   createPathParameter,
   createResponse,
   createRequestBody,
+  createQueryParameter,
 } = require("../../../utils/path-utils");
 
 const paths = {
@@ -23,7 +30,12 @@ const paths = {
             schemaRef: "#/components/schemas/ClientUserGroups",
           }),
         },
-        parameters: createPathParameter(clientIdParam),
+        parameters: [
+          createPathParameter(clientIdParam),
+          createQueryParameter(paginationLimitQuery),
+          createQueryParameter(paginationOffsetQuery),
+          createQueryParameter(searchQuery),
+        ],
       }),
       // create client user group
       ...generatePath({
@@ -33,14 +45,14 @@ const paths = {
         requestBody: createRequestBody({
           description: "Request payload to create client user",
           required: true,
-          contentRef: "#/components/schemas/ClientUserGroup",
+          contentRef: "#/components/schemas/ClientUserGroupFormSchema",
         }),
         parameters: createPathParameter(clientIdParam),
         responses: {
           ...createResponse({
             status: "201",
             description: "OK",
-            schemaRef: "#/components/schemas/ClientUserGroup",
+            schemaRef: "#/components/schemas/ClientUserGroupTableSchema",
           }),
         },
       }),
@@ -49,9 +61,7 @@ const paths = {
         method: "delete",
         tags: ["client_user_groups"],
         summary: "Deletes a client user group in system",
-        parameters: [
-          createPathParameter(clientIdParam),
-        ],
+        parameters: [createPathParameter(clientIdParam)],
         requestBody: createRequestBody({
           description: "Request payload for delete client user group",
           required: true,
@@ -61,7 +71,7 @@ const paths = {
           ...createResponse({
             status: "202",
             description: "OK",
-            schemaRef: "#/components/schemas/ClientUserGroup",
+            schemaRef: "#/components/schemas/ClientUserGroupTableSchema",
           }),
         },
       }),
@@ -79,13 +89,13 @@ const paths = {
           ...createResponse({
             status: "200",
             description: "OK",
-            schemaRef: "#/components/schemas/ClientUserUserGroup",
+            schemaRef: "#/components/schemas/ClientUserGroupTableSchema",
           }),
         },
         requestBody: createRequestBody({
           description: "Request payload to update client user",
           required: true,
-          contentRef: "#/components/schemas/ClientUserGroup",
+          contentRef: "#/components/schemas/ClientUserGroupFormSchema",
         }),
         parameters: [
           createPathParameter(clientIdParam),

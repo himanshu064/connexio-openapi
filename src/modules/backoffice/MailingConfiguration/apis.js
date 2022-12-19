@@ -2,7 +2,14 @@ const {
   generateEndpoint,
   generatePath,
   createResponse,
+  createQueryParameter,
 } = require("../../../utils/path-utils");
+
+const {
+  paginationLimitQuery,
+  paginationOffsetQuery,
+  searchQuery,
+} = require("../../../common/parameters");
 
 const paths = {
   ...generateEndpoint({
@@ -20,6 +27,11 @@ const paths = {
             schemaRef: "#/components/schemas/MailingConfiguration",
           }),
         },
+        parameters: [
+          createQueryParameter(paginationLimitQuery),
+          createQueryParameter(paginationOffsetQuery),
+          createQueryParameter(searchQuery),
+        ],
       }),
     },
   }),

@@ -71,18 +71,39 @@ exports.createResponse = ({ status, description, schemaRef }) => {
 
 exports.createPathParameter = ({
   name,
-  param_in,
   description,
-  required,
+  required = true,
   schemaType,
 }) => {
   return {
     name,
-    in: param_in,
+    in: "path",
     description,
     required,
     schema: {
       type: schemaType,
     },
   };
+};
+
+exports.createQueryParameter = ({
+  name,
+  description,
+  required = false,
+  schemaType,
+  schemaExample,
+}) => {
+  const queryParam = {
+    name,
+    in: "query",
+    description,
+    required,
+    schema: {
+      type: schemaType,
+    },
+  };
+  if (schemaExample) {
+    queryParam["example"] = schemaExample;
+  }
+  return queryParam;
 };

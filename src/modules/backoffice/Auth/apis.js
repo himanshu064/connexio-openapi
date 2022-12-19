@@ -1,7 +1,6 @@
 const {
   generateEndpoint,
   generatePath,
-  createPathParameter,
   createResponse,
   createRequestBody,
 } = require("../../../utils/path-utils");

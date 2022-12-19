@@ -1,10 +1,17 @@
-const { clientIdParam, userIdParam } = require("../../../common/parameters");
+const {
+  clientIdParam,
+  userIdParam,
+  paginationLimitQuery,
+  paginationOffsetQuery,
+  searchQuery,
+} = require("../../../common/parameters");
 const {
   generateEndpoint,
   generatePath,
   createPathParameter,
   createResponse,
   createRequestBody,
+  createQueryParameter,
 } = require("../../../utils/path-utils");
 
 const paths = {
@@ -23,7 +30,12 @@ const paths = {
             schemaRef: "#/components/schemas/ClientUsers",
           }),
         },
-        parameters: createPathParameter(clientIdParam),
+        parameters: [
+          createPathParameter(clientIdParam),
+          createQueryParameter(paginationLimitQuery),
+          createQueryParameter(paginationOffsetQuery),
+          createQueryParameter(searchQuery),
+        ],
       }),
       // create client user
       ...generatePath({
@@ -33,14 +45,14 @@ const paths = {
         requestBody: createRequestBody({
           description: "Request payload to create client user",
           required: true,
-          contentRef: "#/components/schemas/ClientUser",
+          contentRef: "#/components/schemas/ClientUserFormSchema",
         }),
         parameters: createPathParameter(clientIdParam),
         responses: {
           ...createResponse({
             status: "200",
             description: "OK",
-            schemaRef: "#/components/schemas/ClientUser",
+            schemaRef: "#/components/schemas/ClientUserTableSchema",
           }),
         },
       }),
@@ -58,13 +70,13 @@ const paths = {
           ...createResponse({
             status: "200",
             description: "OK",
-            schemaRef: "#/components/schemas/ClientUser",
+            schemaRef: "#/components/schemas/ClientUserTableSchema",
           }),
         },
         requestBody: createRequestBody({
           description: "Request payload to create client user",
           required: true,
-          contentRef: "#/components/schemas/ClientUser",
+          contentRef: "#/components/schemas/ClientUserFormSchema",
         }),
         parameters: [
           createPathParameter(clientIdParam),
@@ -94,7 +106,7 @@ const paths = {
           ...createResponse({
             status: "202",
             description: "OK",
-            schemaRef: "#/components/schemas/ClientUser",
+            schemaRef: "#/components/schemas/ClientUserTableSchema",
           }),
         },
       }),
