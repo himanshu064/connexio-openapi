@@ -7,7 +7,7 @@ module.exports = {
     ...backoffice.UserGroup.schemas,
     ...backoffice.Role.schemas,
     ...backoffice.MailingConfigurations.schemas,
-    ...backoffice.Clients.schemas,
+    ...backoffice.UserSelf.schemas,
   },
   paths: {
     ...backoffice.Auth.apis,
@@ -15,7 +15,7 @@ module.exports = {
     ...backoffice.UserGroup.apias,
     ...backoffice.Role.apis,
     ...backoffice.MailingConfigurations.apis,
-    ...backoffice.Clients.apis,
+    ...backoffice.UserSelf.apis,
   },
   requestBodies: {
     ...backoffice.Auth.body,
@@ -23,6 +23,6 @@ module.exports = {
     ...backoffice.UserGroup.body,
     ...backoffice.Role.body,
     ...backoffice.MailingConfigurations.body,
-    ...backoffice.Clients.body,
+    ...backoffice.UserSelf.body,
   },
 };
