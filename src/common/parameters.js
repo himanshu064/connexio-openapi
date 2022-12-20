@@ -24,7 +24,36 @@ module.exports = {
     required: true,
     schemaType: "string",
   },
-
+  employeeIdParam: {
+    name: "employeeId",
+    description: "Id of an employee",
+    required: true,
+    schemaType: "string",
+  },
+  funnelIdParam: {
+    name: "funnelId",
+    description: "Funnel id",
+    required: true,
+    schemaType: "string",
+  },
+  announcementIdParam: {
+    name: "announcementId",
+    description: "Announcement id",
+    required: true,
+    schemaType: "string",
+  },
+  linkIdParam: {
+    name: "linkId",
+    description: "Link id",
+    required: true,
+    schemaType: "string",
+  },
+  invitationIdParam: {
+    name: "invitationId",
+    description: "Invitation id",
+    required: true,
+    schemaType: "string",
+  },
   // query params
   paginationLimitQuery: {
     name: "limit",

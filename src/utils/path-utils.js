@@ -34,6 +34,7 @@ exports.createRequestBody = ({
   description = "",
   contentRef = "",
   required = false,
+  example,
 }) => {
   return {
     description,
@@ -42,16 +43,19 @@ exports.createRequestBody = ({
         schema: {
           $ref: contentRef,
         },
+        example,
       },
       "application/xml": {
         schema: {
           $ref: contentRef,
         },
+        example,
       },
       "application/x-www-form-urlencoded": {
         schema: {
           $ref: contentRef,
         },
+        example,
       },
     },
     required,

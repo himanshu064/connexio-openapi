@@ -1,5 +1,6 @@
 const backoffice = require("./backoffice");
 const switchModule = require("./switch");
+const employeePortal = require("./employee-portal");
 
 module.exports = {
   schemas: {
@@ -15,6 +16,11 @@ module.exports = {
     ...switchModule.CallLogs.schemas,
     ...switchModule.MessageLogs.schemas,
     ...switchModule.InternalGateways.schemas,
+    // employee-portal schemas
+    ...employeePortal.Employees.schemas,
+    ...employeePortal.Announcements.schemas,
+    ...employeePortal.Links.schemas,
+    ...employeePortal.Invitations.schemas,
   },
   paths: {
     // backoffice apis
@@ -29,6 +35,11 @@ module.exports = {
     ...switchModule.CallLogs.apis,
     ...switchModule.MessageLogs.apis,
     ...switchModule.InternalGateways.apis,
+    // employee-portal apis
+    ...employeePortal.Employees.apis,
+    ...employeePortal.Announcements.apis,
+    ...employeePortal.Links.apis,
+    ...employeePortal.Invitations.apis,
   },
   requestBodies: {
     // backoffice body
@@ -43,5 +54,10 @@ module.exports = {
     ...switchModule.CallLogs.body,
     ...switchModule.MessageLogs.body,
     ...switchModule.InternalGateways.body,
+    // employee-portal body
+    ...employeePortal.Employees.body,
+    ...employeePortal.Announcements.body,
+    ...employeePortal.Links.body,
+    ...employeePortal.Invitations.body,
   },
 };
