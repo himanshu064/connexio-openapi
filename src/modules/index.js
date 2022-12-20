@@ -5,7 +5,7 @@ const employeePortal = require("./employee-portal");
 module.exports = {
   schemas: {
     // backoffice schemas
-    ...backoffice.Auth.schemas,
+    // ...backoffice.Auth.schemas,
     ...backoffice.ClientUser.schemas,
     ...backoffice.UserGroup.schemas,
     ...backoffice.Role.schemas,
@@ -24,7 +24,7 @@ module.exports = {
   },
   paths: {
     // backoffice apis
-    ...backoffice.Auth.apis,
+    // ...backoffice.Auth.apis,
     ...backoffice.ClientUser.apis,
     ...backoffice.UserGroup.apias,
     ...backoffice.Role.apis,
@@ -43,7 +43,7 @@ module.exports = {
   },
   requestBodies: {
     // backoffice body
-    ...backoffice.Auth.body,
+    // ...backoffice.Auth.body,
     ...backoffice.ClientUser.body,
     ...backoffice.UserGroup.body,
     ...backoffice.Role.body,
