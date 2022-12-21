@@ -57,7 +57,7 @@ const paths = {
       ...generatePath({
         method: "delete",
         tags: ["announcements"],
-        summary: "Deletes an announcements in system",
+        summary: "Deletes announcements in system",
         requestBody: createRequestBody({
           description: "Request payload to delete announcement",
           required: true,
@@ -92,6 +92,29 @@ const paths = {
             status: "200",
             description: "OK",
             schemaRef: "#/components/schemas/AnnouncementTableSchema",
+          }),
+        },
+      }),
+    },
+  }),
+  // bulk update
+  ...generateEndpoint({
+    endpoint: "/announcements/bulk",
+    methods: {
+      ...generatePath({
+        method: "patch",
+        tags: ["announcements"],
+        summary: "Bulk Updates an announcements in system",
+        requestBody: createRequestBody({
+          description: "Request payload to bulk update announcements",
+          required: true,
+          contentRef: "#/components/requestBodies/bulkEditAnnouncementPayload",
+        }),
+        responses: {
+          ...createResponse({
+            status: "200",
+            description: "OK",
+            schemaRef: "#/components/schemas/AnnouncementFormSchema",
           }),
         },
       }),

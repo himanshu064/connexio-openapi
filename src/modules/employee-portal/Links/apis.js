@@ -10,7 +10,6 @@ const {
   paginationLimitQuery,
   paginationOffsetQuery,
   searchQuery,
-  announcementIdParam,
   linkIdParam,
 } = require("../../../common/parameters");
 
@@ -93,6 +92,29 @@ const paths = {
             status: "200",
             description: "OK",
             schemaRef: "#/components/schemas/LinkTableSchema",
+          }),
+        },
+      }),
+    },
+  }),
+  // bulk update
+  ...generateEndpoint({
+    endpoint: "/links/bulk",
+    methods: {
+      ...generatePath({
+        method: "patch",
+        tags: ["links"],
+        summary: "Bulk Update links in system",
+        requestBody: createRequestBody({
+          description: "Request payload to bulk update bulk links",
+          required: true,
+          contentRef: "#/components/requestBodies/bulkEditLinksPayload",
+        }),
+        responses: {
+          ...createResponse({
+            status: "200",
+            description: "OK",
+            schemaRef: "#/components/schemas/LinkFormSchema",
           }),
         },
       }),

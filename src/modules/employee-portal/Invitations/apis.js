@@ -97,6 +97,29 @@ const paths = {
       }),
     },
   }),
+  // bulk update
+  ...generateEndpoint({
+    endpoint: "/invitations/bulk",
+    methods: {
+      ...generatePath({
+        method: "patch",
+        tags: ["invitations"],
+        summary: "Bulk update invitations in system",
+        requestBody: createRequestBody({
+          description: "Request payload for bulk invitation",
+          required: true,
+          contentRef: "#/components/requestBodies/bulkEditInvitationPayload",
+        }),
+        responses: {
+          ...createResponse({
+            status: "200",
+            description: "OK",
+            schemaRef: "#/components/schemas/InvitationFormSchema",
+          }),
+        },
+      }),
+    },
+  }),
 };
 
 module.exports = paths;
