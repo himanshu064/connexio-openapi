@@ -111,3 +111,12 @@ exports.createQueryParameter = ({
   }
   return queryParam;
 };
+
+exports.createIdParam = ({ name, description, required = true }) => {
+  return {
+    name,
+    description,
+    required: true,
+    schemaType: "string",
+  };
+};

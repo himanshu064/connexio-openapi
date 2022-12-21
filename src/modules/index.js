@@ -21,6 +21,11 @@ module.exports = {
     ...employeePortal.Announcements.schemas,
     ...employeePortal.Links.schemas,
     ...employeePortal.Invitations.schemas,
+    ...employeePortal.Schedules.schemas,
+    ...employeePortal.Shifts.schemas,
+    ...employeePortal.Payments.schemas,
+    ...employeePortal.Overtimes.schemas,
+    ...employeePortal.ConfigurationTemplates.schemas,
   },
   paths: {
     // backoffice apis
@@ -40,6 +45,11 @@ module.exports = {
     ...employeePortal.Announcements.apis,
     ...employeePortal.Links.apis,
     ...employeePortal.Invitations.apis,
+    ...employeePortal.Schedules.apis,
+    ...employeePortal.Shifts.apis,
+    ...employeePortal.Payments.apis,
+    ...employeePortal.Overtimes.apis,
+    ...employeePortal.ConfigurationTemplates.apis,
   },
   requestBodies: {
     // backoffice body
@@ -59,5 +69,10 @@ module.exports = {
     ...employeePortal.Announcements.body,
     ...employeePortal.Links.body,
     ...employeePortal.Invitations.body,
+    ...employeePortal.Schedules.body,
+    ...employeePortal.Shifts.body,
+    ...employeePortal.Payments.body,
+    ...employeePortal.Overtimes.body,
+    ...employeePortal.ConfigurationTemplates.body,
   },
 };

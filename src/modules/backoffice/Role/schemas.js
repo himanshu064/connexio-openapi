@@ -158,7 +158,7 @@ const RoleTableSchema = {
 
 const Roles = {
   type: "array",
-  $ref: "#/components/schemas/Role",
+  $ref: "#/components/schemas/RoleFormSchema",
 };
 
 module.exports = {

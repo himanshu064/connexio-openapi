@@ -1,3 +1,5 @@
+const { createIdParam } = require("../utils/path-utils");
+
 module.exports = {
   // path params
   clientIdParam: {
@@ -48,12 +50,42 @@ module.exports = {
     required: true,
     schemaType: "string",
   },
+  shiftIdParam: {
+    name: "shiftId",
+    description: "Shift id",
+    required: true,
+    schemaType: "string",
+  },
   invitationIdParam: {
     name: "invitationId",
     description: "Invitation id",
     required: true,
     schemaType: "string",
   },
+  scheduleIdParam: {
+    name: "scheduleId",
+    description: "Schedule id",
+    required: true,
+    schemaType: "string",
+  },
+  entryIdParam: {
+    name: "entryId",
+    description: "Schedule id",
+    required: true,
+    schemaType: "string",
+  },
+  paymentIdParam: createIdParam({
+    name: "paymentId",
+    description: "Payment id",
+  }),
+  overtimeIdParam: createIdParam({
+    name: "overtimeId",
+    description: "Overtime id",
+  }),
+  compensationConfigurationIdParam: createIdParam({
+    name: "compensationConfigurationId",
+    description: "Compensation Configuration id",
+  }),
   // query params
   paginationLimitQuery: {
     name: "limit",
