@@ -26,6 +26,7 @@ module.exports = {
     ...employeePortal.Payments.schemas,
     ...employeePortal.Overtimes.schemas,
     ...employeePortal.ConfigurationTemplates.schemas,
+    ...employeePortal.InvoiceList.schemas,
   },
   paths: {
     // backoffice apis
@@ -50,6 +51,7 @@ module.exports = {
     ...employeePortal.Payments.apis,
     ...employeePortal.Overtimes.apis,
     ...employeePortal.ConfigurationTemplates.apis,
+    ...employeePortal.InvoiceList.apis,
   },
   requestBodies: {
     // backoffice body
@@ -74,5 +76,6 @@ module.exports = {
     ...employeePortal.Payments.body,
     ...employeePortal.Overtimes.body,
     ...employeePortal.ConfigurationTemplates.body,
+    ...employeePortal.InvoiceList.body,
   },
 };

@@ -7,6 +7,7 @@ const Shifts = require("./Shifts");
 const Payments = require("./Payments");
 const Overtimes = require("./Overtimes");
 const ConfigurationTemplates = require("./ConfigurationTemplates");
+const InvoiceList = require("./InvoiceList");
 
 module.exports = {
   Employees,
@@ -18,4 +19,5 @@ module.exports = {
   Payments,
   Overtimes,
   ConfigurationTemplates,
+  InvoiceList,
 };

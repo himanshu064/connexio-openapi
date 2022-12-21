@@ -86,6 +86,10 @@ module.exports = {
     name: "compensationConfigurationId",
     description: "Compensation Configuration id",
   }),
+  invoiceIdParam: createIdParam({
+    name: "invoiceId",
+    description: "Invoice id",
+  }),
   // query params
   paginationLimitQuery: {
     name: "limit",
