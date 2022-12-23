@@ -116,7 +116,7 @@ exports.createIdParam = ({ name, description, required = true }) => {
   return {
     name,
     description,
-    required: true,
+    required,
     schemaType: "string",
   };
 };

@@ -11,6 +11,8 @@ const InvoiceList = require("./InvoiceList");
 const Accounts = require("./Accounts");
 const Services = require("./Services");
 const VacationList = require("./VacationList");
+const VacationRequests = require("./VacationRequests");
+const VacationTypes = require("./VacationTypes");
 
 module.exports = {
   Employees,
@@ -26,4 +28,6 @@ module.exports = {
   Accounts,
   Services,
   VacationList,
+  VacationRequests,
+  VacationTypes,
 };
