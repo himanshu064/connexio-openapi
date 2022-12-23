@@ -32,6 +32,7 @@ module.exports = {
     ...employeePortal.VacationList.schemas,
     ...employeePortal.VacationRequests.schemas,
     ...employeePortal.VacationTypes.schemas,
+    ...employeePortal.Onboarding.schemas,
   },
   paths: {
     // backoffice apis
@@ -62,6 +63,7 @@ module.exports = {
     ...employeePortal.VacationList.apis,
     ...employeePortal.VacationRequests.apis,
     ...employeePortal.VacationTypes.apis,
+    ...employeePortal.Onboarding.apis,
   },
   requestBodies: {
     // backoffice body
@@ -92,5 +94,6 @@ module.exports = {
     ...employeePortal.VacationList.body,
     ...employeePortal.VacationRequests.body,
     ...employeePortal.VacationTypes.body,
+    ...employeePortal.Onboarding.body,
   },
 };
