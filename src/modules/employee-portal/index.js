@@ -10,6 +10,7 @@ const ConfigurationTemplates = require("./ConfigurationTemplates");
 const InvoiceList = require("./InvoiceList");
 const Accounts = require("./Accounts");
 const Services = require("./Services");
+const VacationList = require("./VacationList");
 
 module.exports = {
   Employees,
@@ -24,4 +25,5 @@ module.exports = {
   InvoiceList,
   Accounts,
   Services,
+  VacationList,
 };

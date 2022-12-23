@@ -29,6 +29,7 @@ module.exports = {
     ...employeePortal.InvoiceList.schemas,
     ...employeePortal.Accounts.schemas,
     ...employeePortal.Services.schemas,
+    ...employeePortal.VacationList.schemas,
   },
   paths: {
     // backoffice apis
@@ -56,6 +57,7 @@ module.exports = {
     ...employeePortal.InvoiceList.apis,
     ...employeePortal.Accounts.apis,
     ...employeePortal.Services.apis,
+    ...employeePortal.VacationList.apis,
   },
   requestBodies: {
     // backoffice body
@@ -83,5 +85,6 @@ module.exports = {
     ...employeePortal.InvoiceList.body,
     ...employeePortal.Accounts.body,
     ...employeePortal.Services.body,
+    ...employeePortal.VacationList.body,
   },
 };

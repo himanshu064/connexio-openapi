@@ -98,6 +98,10 @@ module.exports = {
     name: "serviceId",
     description: "Service id",
   }),
+  vacationIdParam: createIdParam({
+    name: "vacationId",
+    description: "Vacation id",
+  }),
   // query params
   paginationLimitQuery: {
     name: "limit",
