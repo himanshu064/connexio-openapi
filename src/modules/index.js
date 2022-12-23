@@ -12,7 +12,7 @@ module.exports = {
     ...backoffice.MailingConfiguration.schemas,
     ...backoffice.UserSelf.schemas,
     // switch schemas
-    ...switchModule.Accounts.schemas,
+    ...switchModule.MyAccount.schemas,
     ...switchModule.CallLogs.schemas,
     ...switchModule.MessageLogs.schemas,
     ...switchModule.InternalGateways.schemas,
@@ -27,6 +27,8 @@ module.exports = {
     ...employeePortal.Overtimes.schemas,
     ...employeePortal.ConfigurationTemplates.schemas,
     ...employeePortal.InvoiceList.schemas,
+    ...employeePortal.Accounts.schemas,
+    ...employeePortal.Services.schemas,
   },
   paths: {
     // backoffice apis
@@ -37,7 +39,7 @@ module.exports = {
     ...backoffice.MailingConfiguration.apis,
     ...backoffice.UserSelf.apis,
     // switch apis
-    ...switchModule.Accounts.apis,
+    ...switchModule.MyAccount.apis,
     ...switchModule.CallLogs.apis,
     ...switchModule.MessageLogs.apis,
     ...switchModule.InternalGateways.apis,
@@ -52,6 +54,8 @@ module.exports = {
     ...employeePortal.Overtimes.apis,
     ...employeePortal.ConfigurationTemplates.apis,
     ...employeePortal.InvoiceList.apis,
+    ...employeePortal.Accounts.apis,
+    ...employeePortal.Services.apis,
   },
   requestBodies: {
     // backoffice body
@@ -62,7 +66,7 @@ module.exports = {
     ...backoffice.MailingConfiguration.body,
     ...backoffice.UserSelf.body,
     // switch body
-    ...switchModule.Accounts.body,
+    ...switchModule.MyAccount.body,
     ...switchModule.CallLogs.body,
     ...switchModule.MessageLogs.body,
     ...switchModule.InternalGateways.body,
@@ -77,5 +81,7 @@ module.exports = {
     ...employeePortal.Overtimes.body,
     ...employeePortal.ConfigurationTemplates.body,
     ...employeePortal.InvoiceList.body,
+    ...employeePortal.Accounts.body,
+    ...employeePortal.Services.body,
   },
 };

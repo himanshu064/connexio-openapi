@@ -8,6 +8,8 @@ const Payments = require("./Payments");
 const Overtimes = require("./Overtimes");
 const ConfigurationTemplates = require("./ConfigurationTemplates");
 const InvoiceList = require("./InvoiceList");
+const Accounts = require("./Accounts");
+const Services = require("./Services");
 
 module.exports = {
   Employees,
@@ -20,4 +22,6 @@ module.exports = {
   Overtimes,
   ConfigurationTemplates,
   InvoiceList,
+  Accounts,
+  Services,
 };

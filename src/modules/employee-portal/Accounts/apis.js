@@ -10,23 +10,23 @@ const {
   paginationLimitQuery,
   paginationOffsetQuery,
   searchQuery,
-  invoiceIdParam,
+  accountIdParam,
 } = require("../../../common/parameters");
 
 const paths = {
   ...generateEndpoint({
-    endpoint: "/invoices",
+    endpoint: "/accounts",
     methods: {
-      // get overtimes
+      // get accounts
       ...generatePath({
         method: "get",
-        tags: ["invoices"],
-        summary: "Get all invoices in system",
+        tags: ["accounts"],
+        summary: "Get all accounts in system",
         responses: {
           ...createResponse({
             status: "200",
             description: "OK",
-            schemaRef: "#/components/schemas/InvoiceLists",
+            schemaRef: "#/components/schemas/Accounts",
           }),
         },
         parameters: [
@@ -38,60 +38,60 @@ const paths = {
       // create overtime
       ...generatePath({
         method: "post",
-        tags: ["invoices"],
-        summary: "Creates a new invoices in system",
+        tags: ["accounts"],
+        summary: "Creates a new accounts in system",
         requestBody: createRequestBody({
-          description: "Request payload to create invoices",
+          description: "Request payload to create accounts",
           required: true,
-          contentRef: "#/components/schemas/InvoiceListFormSchema",
+          contentRef: "#/components/schemas/AccountFormSchema",
         }),
         responses: {
           ...createResponse({
             status: "200",
             description: "OK",
-            schemaRef: "#/components/schemas/InvoiceListTableSchema",
+            schemaRef: "#/components/schemas/AccountTableSchema",
           }),
         },
       }),
       // delete overtime
       ...generatePath({
         method: "delete",
-        tags: ["invoices"],
-        summary: "Deletes a invoices in system",
+        tags: ["accounts"],
+        summary: "Delete accounts in system",
         requestBody: createRequestBody({
-          description: "Request payload to delete invoices",
+          description: "Request payload to delete account",
           required: true,
-          contentRef: "#/components/requestBodies/deleteInvoiceListPayload",
+          contentRef: "#/components/requestBodies/deleteAccountsPayload",
         }),
         responses: {
           ...createResponse({
             status: "200",
             description: "OK",
-            schemaRef: "#/components/schemas/InvoiceListTableSchema",
+            schemaRef: "#/components/schemas/AccountTableSchema",
           }),
         },
       }),
     },
   }),
   ...generateEndpoint({
-    endpoint: "/invoices/{invoiceId}",
+    endpoint: "/accounts/{accountId}",
     methods: {
       // update link
       ...generatePath({
         method: "patch",
-        tags: ["invoices"],
-        summary: "Updates a invoice in system",
+        tags: ["accounts"],
+        summary: "Updates a account in system",
         requestBody: createRequestBody({
-          description: "Request payload to update invoices",
+          description: "Request payload to update account",
           required: true,
-          contentRef: "#/components/schemas/InvoiceListFormSchema",
+          contentRef: "#/components/schemas/AccountFormSchema",
         }),
-        parameters: [createPathParameter(invoiceIdParam)],
+        parameters: [createPathParameter(accountIdParam)],
         responses: {
           ...createResponse({
             status: "200",
             description: "OK",
-            schemaRef: "#/components/schemas/InvoiceListFormSchema",
+            schemaRef: "#/components/schemas/AccountFormSchema",
           }),
         },
       }),
@@ -99,22 +99,22 @@ const paths = {
   }),
   // bulk update
   ...generateEndpoint({
-    endpoint: "/invoices/bulk",
+    endpoint: "/accounts/bulk",
     methods: {
       ...generatePath({
         method: "patch",
-        tags: ["invoices"],
-        summary: "Bulk Update invoices in system",
+        tags: ["accounts"],
+        summary: "Bulk Update accounts in system",
         requestBody: createRequestBody({
-          description: "Request payload to bulk update bulk invoices",
+          description: "Request payload to bulk update bulk accounts",
           required: true,
-          contentRef: "#/components/requestBodies/bulkEditInvoiceListPayload",
+          contentRef: "#/components/requestBodies/bulkEditAccountsPayload",
         }),
         responses: {
           ...createResponse({
             status: "200",
             description: "OK",
-            schemaRef: "#/components/schemas/InvoiceListFormSchema",
+            schemaRef: "#/components/schemas/AccountFormSchema",
           }),
         },
       }),

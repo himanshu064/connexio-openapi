@@ -10,23 +10,24 @@ const {
   paginationLimitQuery,
   paginationOffsetQuery,
   searchQuery,
-  invoiceIdParam,
+  accountIdParam,
+  serviceIdParam,
 } = require("../../../common/parameters");
 
 const paths = {
   ...generateEndpoint({
-    endpoint: "/invoices",
+    endpoint: "/services",
     methods: {
-      // get overtimes
+      // get services
       ...generatePath({
         method: "get",
-        tags: ["invoices"],
-        summary: "Get all invoices in system",
+        tags: ["services"],
+        summary: "Get all services in system",
         responses: {
           ...createResponse({
             status: "200",
             description: "OK",
-            schemaRef: "#/components/schemas/InvoiceLists",
+            schemaRef: "#/components/schemas/Services",
           }),
         },
         parameters: [
@@ -38,60 +39,60 @@ const paths = {
       // create overtime
       ...generatePath({
         method: "post",
-        tags: ["invoices"],
-        summary: "Creates a new invoices in system",
+        tags: ["services"],
+        summary: "Creates a new service in system",
         requestBody: createRequestBody({
-          description: "Request payload to create invoices",
+          description: "Request payload to create service",
           required: true,
-          contentRef: "#/components/schemas/InvoiceListFormSchema",
+          contentRef: "#/components/schemas/ServiceFormSchema",
         }),
         responses: {
           ...createResponse({
             status: "200",
             description: "OK",
-            schemaRef: "#/components/schemas/InvoiceListTableSchema",
+            schemaRef: "#/components/schemas/ServiceTableSchema",
           }),
         },
       }),
-      // delete overtime
+      // delete services
       ...generatePath({
         method: "delete",
-        tags: ["invoices"],
-        summary: "Deletes a invoices in system",
+        tags: ["services"],
+        summary: "Delete services in system",
         requestBody: createRequestBody({
-          description: "Request payload to delete invoices",
+          description: "Request payload to delete account",
           required: true,
-          contentRef: "#/components/requestBodies/deleteInvoiceListPayload",
+          contentRef: "#/components/requestBodies/deleteServicesPayload",
         }),
         responses: {
           ...createResponse({
             status: "200",
             description: "OK",
-            schemaRef: "#/components/schemas/InvoiceListTableSchema",
+            schemaRef: "#/components/schemas/ServiceTableSchema",
           }),
         },
       }),
     },
   }),
   ...generateEndpoint({
-    endpoint: "/invoices/{invoiceId}",
+    endpoint: "/accounts/{serviceId}",
     methods: {
-      // update link
+      // update services
       ...generatePath({
         method: "patch",
-        tags: ["invoices"],
-        summary: "Updates a invoice in system",
+        tags: ["services"],
+        summary: "Updates a service in system",
         requestBody: createRequestBody({
-          description: "Request payload to update invoices",
+          description: "Request payload to update account",
           required: true,
-          contentRef: "#/components/schemas/InvoiceListFormSchema",
+          contentRef: "#/components/schemas/ServiceFormSchema",
         }),
-        parameters: [createPathParameter(invoiceIdParam)],
+        parameters: [createPathParameter(serviceIdParam)],
         responses: {
           ...createResponse({
             status: "200",
             description: "OK",
-            schemaRef: "#/components/schemas/InvoiceListFormSchema",
+            schemaRef: "#/components/schemas/ServiceFormSchema",
           }),
         },
       }),
@@ -99,22 +100,22 @@ const paths = {
   }),
   // bulk update
   ...generateEndpoint({
-    endpoint: "/invoices/bulk",
+    endpoint: "/services/bulk",
     methods: {
       ...generatePath({
         method: "patch",
-        tags: ["invoices"],
-        summary: "Bulk Update invoices in system",
+        tags: ["services"],
+        summary: "Bulk Update services in system",
         requestBody: createRequestBody({
-          description: "Request payload to bulk update bulk invoices",
+          description: "Request payload to bulk update bulk services",
           required: true,
-          contentRef: "#/components/requestBodies/bulkEditInvoiceListPayload",
+          contentRef: "#/components/requestBodies/bulkEditServicesPayload",
         }),
         responses: {
           ...createResponse({
             status: "200",
             description: "OK",
-            schemaRef: "#/components/schemas/InvoiceListFormSchema",
+            schemaRef: "#/components/schemas/ServiceFormSchema",
           }),
         },
       }),

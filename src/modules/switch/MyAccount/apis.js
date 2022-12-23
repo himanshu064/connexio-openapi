@@ -11,7 +11,7 @@ const paths = {
       // get my account details
       ...generatePath({
         method: "get",
-        tags: ["accounts"],
+        tags: ["my_account"],
         summary: "Get my account details in the system",
         responses: {
           ...createResponse({

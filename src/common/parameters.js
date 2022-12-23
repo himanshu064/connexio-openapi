@@ -90,6 +90,14 @@ module.exports = {
     name: "invoiceId",
     description: "Invoice id",
   }),
+  accountIdParam: createIdParam({
+    name: "acoountId",
+    description: "Account id",
+  }),
+  serviceIdParam: createIdParam({
+    name: "serviceId",
+    description: "Service id",
+  }),
   // query params
   paginationLimitQuery: {
     name: "limit",
