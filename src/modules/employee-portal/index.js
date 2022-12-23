@@ -14,6 +14,8 @@ const VacationList = require("./VacationList");
 const VacationRequests = require("./VacationRequests");
 const VacationTypes = require("./VacationTypes");
 const Onboarding = require("./Onboarding");
+const Offboarding = require("./Offboarding");
+const Missions = require("./Missions");
 
 module.exports = {
   Employees,
@@ -32,4 +34,6 @@ module.exports = {
   VacationRequests,
   VacationTypes,
   Onboarding,
+  Offboarding,
+  Missions,
 };
