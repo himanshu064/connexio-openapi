@@ -383,17 +383,6 @@ const OffboardingFunnelTasksSubscriptionFormSchema = {
             title: "Contents",
             items: {
               poly_type_name: "_type",
-              oneOf: [
-                {
-                  $ref: "#file_content",
-                },
-                {
-                  $ref: "#markdown_content",
-                },
-                {
-                  $ref: "#video_content",
-                },
-              ],
             },
             attr: {
               poly_select_box_title: "Content Item",
