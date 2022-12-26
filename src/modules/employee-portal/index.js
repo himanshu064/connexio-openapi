@@ -16,6 +16,9 @@ const VacationTypes = require("./VacationTypes");
 const Onboarding = require("./Onboarding");
 const Offboarding = require("./Offboarding");
 const Missions = require("./Missions");
+const Activity = require("./Activity");
+const Departments = require("./Departments");
+const JobTypes = require("./JobTypes");
 
 module.exports = {
   Employees,
@@ -36,4 +39,7 @@ module.exports = {
   Onboarding,
   Offboarding,
   Missions,
+  Activity,
+  Departments,
+  JobTypes,
 };

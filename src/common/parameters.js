@@ -110,6 +110,22 @@ module.exports = {
     name: "taskId",
     description: "Task id",
   }),
+  achievementIdParam: createIdParam({
+    name: "achievementId",
+    description: "Achievement id",
+  }),
+  departmentIdParam: createIdParam({
+    name: "departmentId",
+    description: "Department id",
+  }),
+  jobTypeIdParam: createIdParam({
+    name: "jobTypeId",
+    description: "Job type id",
+  }),
+  activityCategoryIdParam: createIdParam({
+    name: "activityCategoryId",
+    description: "Activity category id",
+  }),
   // query params
   paginationLimitQuery: {
     name: "limit",

@@ -35,6 +35,9 @@ module.exports = {
     ...employeePortal.Onboarding.schemas,
     ...employeePortal.Offboarding.schemas,
     ...employeePortal.Missions.schemas,
+    ...employeePortal.Activity.schemas,
+    ...employeePortal.Departments.schemas,
+    ...employeePortal.JobTypes.schemas,
   },
   paths: {
     // backoffice apis
@@ -68,6 +71,9 @@ module.exports = {
     ...employeePortal.Onboarding.apis,
     ...employeePortal.Offboarding.apis,
     ...employeePortal.Missions.apis,
+    ...employeePortal.Activity.apis,
+    ...employeePortal.Departments.apis,
+    ...employeePortal.JobTypes.apis,
   },
   requestBodies: {
     // backoffice body
@@ -101,5 +107,8 @@ module.exports = {
     ...employeePortal.Onboarding.body,
     ...employeePortal.Offboarding.body,
     ...employeePortal.Missions.body,
+    ...employeePortal.Activity.body,
+    ...employeePortal.Departments.body,
+    ...employeePortal.JobTypes.body,
   },
 };
