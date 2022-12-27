@@ -12,6 +12,7 @@ const {
   searchQuery,
   achievementIdParam,
   activityCategoryIdParam,
+  achievementTypeIdParam,
 } = require("../../../common/parameters");
 
 const paths = {
@@ -305,7 +306,7 @@ const paths = {
         tags: ["activity"],
         summary: "Deletes achievement type in system",
         requestBody: createRequestBody({
-          description: "Request payload to deletes achievement type",
+          description: "Request payload to delete achievement type",
           required: true,
           contentRef: "#/components/requestBodies/deleteAchievementTypePayload",
         }),
@@ -321,7 +322,7 @@ const paths = {
   }),
   // update an activity category form schema
   ...generateEndpoint({
-    endpoint: "achievement-types/{activityCategoryId}",
+    endpoint: "achievement-types/{achievementTypeId}",
     methods: {
       ...generatePath({
         method: "patch",
@@ -330,14 +331,14 @@ const paths = {
         requestBody: createRequestBody({
           description: "Request payload to update achievement",
           required: true,
-          contentRef: "#/components/schemas/ActivityCategoryFormSchema",
+          contentRef: "#/components/schemas/AchievementTypeFormSchema",
         }),
-        parameters: [createPathParameter(activityCategoryIdParam)],
+        parameters: [createPathParameter(achievementTypeIdParam)],
         responses: {
           ...createResponse({
             status: "200",
             description: "OK",
-            schemaRef: "#/components/schemas/ActivityCategoryFormSchema",
+            schemaRef: "#/components/schemas/AchievementTypeFormSchema",
           }),
         },
       }),
@@ -345,24 +346,22 @@ const paths = {
   }),
   // bulk update
   ...generateEndpoint({
-    endpoint: "/activity-categories/bulk",
+    endpoint: "/achievement-types/bulk",
     methods: {
       ...generatePath({
         method: "patch",
         tags: ["activity"],
-        summary: "Bulk Update activity categories in system",
+        summary: "Bulk Update achievement types in system",
         requestBody: createRequestBody({
-          description:
-            "Request payload to bulk update bulk activity categories",
-          required: true,
+          description: "Request payload to bulk update bulk achievement-types",
           contentRef:
-            "#/components/requestBodies/bulkEditActivityCategoryPayload",
+            "#/components/requestBodies/bulkEditAchievementTypePayload",
         }),
         responses: {
           ...createResponse({
             status: "200",
             description: "OK",
-            schemaRef: "#/components/schemas/ActivityCategoryFormSchema",
+            schemaRef: "#/components/schemas/AchievementTypeFormSchema",
           }),
         },
       }),

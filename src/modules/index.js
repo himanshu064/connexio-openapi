@@ -38,6 +38,7 @@ module.exports = {
     ...employeePortal.Activity.schemas,
     ...employeePortal.Departments.schemas,
     ...employeePortal.JobTypes.schemas,
+    ...employeePortal.Reporting.schemas,
   },
   paths: {
     // backoffice apis
@@ -74,6 +75,7 @@ module.exports = {
     ...employeePortal.Activity.apis,
     ...employeePortal.Departments.apis,
     ...employeePortal.JobTypes.apis,
+    ...employeePortal.Reporting.apis,
   },
   requestBodies: {
     // backoffice body
@@ -110,5 +112,6 @@ module.exports = {
     ...employeePortal.Activity.body,
     ...employeePortal.Departments.body,
     ...employeePortal.JobTypes.body,
+    ...employeePortal.Reporting.body,
   },
 };

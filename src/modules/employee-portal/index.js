@@ -19,6 +19,7 @@ const Missions = require("./Missions");
 const Activity = require("./Activity");
 const Departments = require("./Departments");
 const JobTypes = require("./JobTypes");
+const Reporting = require("./Reporting");
 
 module.exports = {
   Employees,
@@ -42,4 +43,5 @@ module.exports = {
   Activity,
   Departments,
   JobTypes,
+  Reporting,
 };

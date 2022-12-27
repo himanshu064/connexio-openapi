@@ -126,6 +126,10 @@ module.exports = {
     name: "activityCategoryId",
     description: "Activity category id",
   }),
+  achievementTypeIdParam: createIdParam({
+    name: "achievementTypeId",
+    description: "Achievement Type id",
+  }),
   // query params
   paginationLimitQuery: {
     name: "limit",
