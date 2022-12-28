@@ -17,6 +17,7 @@ module.exports = {
     ...switchModule.MessageLogs.schemas,
     ...switchModule.InternalGateways.schemas,
     // employee-portal schemas
+    ...employeePortal.MyAccount.schemas,
     ...employeePortal.Employees.schemas,
     ...employeePortal.Announcements.schemas,
     ...employeePortal.Links.schemas,
@@ -54,6 +55,7 @@ module.exports = {
     ...switchModule.MessageLogs.apis,
     ...switchModule.InternalGateways.apis,
     // employee-portal apis
+    ...employeePortal.MyAccount.apis,
     ...employeePortal.Employees.apis,
     ...employeePortal.Announcements.apis,
     ...employeePortal.Links.apis,
@@ -91,6 +93,7 @@ module.exports = {
     ...switchModule.MessageLogs.body,
     ...switchModule.InternalGateways.body,
     // employee-portal body
+    ...employeePortal.MyAccount.body,
     ...employeePortal.Employees.body,
     ...employeePortal.Announcements.body,
     ...employeePortal.Links.body,

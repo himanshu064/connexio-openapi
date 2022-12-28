@@ -1,3 +1,4 @@
+const MyAccount = require("./MyAccount");
 const Employees = require("./Employees");
 const Announcements = require("./Announcements");
 const Links = require("./Links");
@@ -22,6 +23,7 @@ const JobTypes = require("./JobTypes");
 const Reporting = require("./Reporting");
 
 module.exports = {
+  MyAccount,
   Employees,
   Announcements,
   Links,
