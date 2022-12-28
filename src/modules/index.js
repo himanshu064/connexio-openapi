@@ -1,6 +1,7 @@
 const backoffice = require("./backoffice");
 const switchModule = require("./switch");
 const employeePortal = require("./employee-portal");
+const crmPortal = require("./crm");
 
 module.exports = {
   schemas: {
@@ -40,6 +41,9 @@ module.exports = {
     ...employeePortal.Departments.schemas,
     ...employeePortal.JobTypes.schemas,
     ...employeePortal.Reporting.schemas,
+
+    // crm schemas
+    ...crmPortal.Campaigns.schemas,
   },
   paths: {
     // backoffice apis
@@ -78,6 +82,9 @@ module.exports = {
     ...employeePortal.Departments.apis,
     ...employeePortal.JobTypes.apis,
     ...employeePortal.Reporting.apis,
+
+    // crm apis
+    ...crmPortal.Campaigns.apis,
   },
   requestBodies: {
     // backoffice body
@@ -116,5 +123,8 @@ module.exports = {
     ...employeePortal.Departments.body,
     ...employeePortal.JobTypes.body,
     ...employeePortal.Reporting.body,
+
+    // crm body
+    ...crmPortal.Campaigns.body,
   },
 };
