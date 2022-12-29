@@ -1,9 +1,9 @@
-const deleteCampaignPayload = {
+const deleteLeadPayload = {
     title: "",
     type: "array",
     items: [42],
 };
 
 module.exports = {
-    deleteCampaignPayload,
+    deleteLeadPayload,
 };

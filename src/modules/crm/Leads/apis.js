@@ -1,6 +1,5 @@
 const {
-    campaignIdParam,
-    campaignId,
+    leadIdParam,
     paginationLimitQuery,
     paginationOffsetQuery,
     searchQuery,
@@ -16,18 +15,18 @@ const {
 
 const paths = {
     ...generateEndpoint({
-        endpoint: "/campaigns",
+        endpoint: "/leads",
         methods: {
-            // get Campaigns 
+            // get leads
             ...generatePath({
                 method: "get",
-                tags: ["campaigns"],
-                summary: "Get all client user group in system",
+                tags: ["leads"],
+                summary: "Get all leads in system",
                 responses: {
                     ...createResponse({
                         status: "200",
                         description: "OK",
-                        schemaRef: "#/components/schemas/Campaigns",
+                        schemaRef: "#/components/schemas/Leads",
                     }),
                 },
                 parameters: [
@@ -36,72 +35,71 @@ const paths = {
                     createQueryParameter(searchQuery),
                 ],
             }),
-            // create campaigns group
+            // create Leads
             ...generatePath({
                 method: "post",
-                tags: ["campaigns"],
-                summary: "Creates a campaigns in system",
+                tags: ["leads"],
+                summary: "Creates a new Leads in system",
                 requestBody: createRequestBody({
-                    description: "Request payload to create campaigns",
+                    description: "Request payload to create Leads",
                     required: true,
-                    contentRef: "#/components/schemas/CampaignFormSchema",
+                    contentRef: "#/components/schemas/LeadFormSchema",
                 }),
                 responses: {
                     ...createResponse({
                         status: "201",
                         description: "OK",
-                        schemaRef: "#/components/schemas/CampaignTableSchema",
+                        schemaRef: "#/components/schemas/LeadTableSchema",
                     }),
                 },
             }),
-            // delete Campaigns group
+            // delete lead
             ...generatePath({
                 method: "delete",
-                tags: ["campaigns"],
-                summary: "Deletes a Campaigns group in system",
-                parameters: [createPathParameter(campaignIdParam)],
+                tags: ["leads"],
+                summary: "Deletes a Leads in system",
+                parameters: [createPathParameter(leadIdParam)],
                 requestBody: createRequestBody({
-                    description: "Request payload for delete Campaign group",
+                    description: "Request payload for delete lead",
                     required: true,
-                    contentRef: "#/components/requestBodies/deleteCampaignPayload",
+                    contentRef: "#/components/requestBodies/deleteLeadPayload",
                 }),
                 responses: {
                     ...createResponse({
                         status: "202",
                         description: "OK",
-                        schemaRef: "#/components/schemas/CampaignTableSchema",
+                        schemaRef: "#/components/schemas/LeadTableSchema",
                     }),
                 },
             }),
         },
     }),
-    // update single Campaigns group
+    // update single client role
     ...generateEndpoint({
-        endpoint: "/Campaigns/{campaignId}",
+        endpoint: "/leads/{leadId}",
         methods: {
             ...generatePath({
                 method: "patch",
-                tags: ["campaigns"],
-                summary: "Update a Campaigns in system",
+                tags: ["leads"],
+                summary: "Update a lead in system",
                 responses: {
                     ...createResponse({
                         status: "200",
                         description: "OK",
-                        schemaRef: "#/components/schemas/CampaignTableSchema",
+                        schemaRef: "#/components/schemas/LeadTableSchema",
                     }),
                 },
                 requestBody: createRequestBody({
-                    description: "Request payload to update Campaigns",
+                    description: "Request payload to update lead",
                     required: true,
-                    contentRef: "#/components/schemas/CampaignFormSchema",
+                    contentRef: "#/components/schemas/LeadFormSchema",
                 }),
                 parameters: [
-                    createPathParameter(campaignIdParam),
+                    createPathParameter(leadIdParam),
                 ],
             }),
         },
     }),
 };
-// campaigns
-module.exports = paths;
 
+module.exports = paths;

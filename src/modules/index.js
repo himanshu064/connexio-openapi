@@ -44,6 +44,7 @@ module.exports = {
 
     // crm schemas
     ...crmPortal.Campaigns.schemas,
+    ...crmPortal.Leads.schemas,
   },
   paths: {
     // backoffice apis
@@ -85,6 +86,7 @@ module.exports = {
 
     // crm apis
     ...crmPortal.Campaigns.apis,
+    ...crmPortal.Leads.apis,
   },
   requestBodies: {
     // backoffice body
@@ -126,5 +128,6 @@ module.exports = {
 
     // crm body
     ...crmPortal.Campaigns.body,
+    ...crmPortal.Leads.body,
   },
 };
