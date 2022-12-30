@@ -134,10 +134,37 @@ module.exports = {
     name: "campaignId",
     description: "campaign id",
   }),
-
   leadIdParam: createIdParam({
     name: "leadId",
     description: "lead id",
+  }),
+  customerIdParam: createIdParam({
+    name: "customerId",
+    description: "customer Id",
+  }),
+  dealIdParam: createIdParam({
+    name: "dealId",
+    description: "deal Id",
+  }),
+  orderIdParam: createIdParam({
+    name: "orderId",
+    description: "order Id",
+  }),
+  productIdParam: createIdParam({
+    name: "productId",
+    description: "product Id",
+  }),
+  activityIdParam: createIdParam({
+    name: "activityId",
+    description: "activity Id",
+  }),
+  contactcampaignIdParam: createIdParam({
+    name: "contactcampaignId",
+    description: "contactcampaign Id",
+  }),
+  carrierIdParam: createIdParam({
+    name: "carrierId",
+    description: "carrier Id",
   }),
 
   // query params

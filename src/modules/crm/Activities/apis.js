@@ -1,6 +1,5 @@
 const {
-    campaignIdParam,
-    campaignId,
+    activityIdParam,
     paginationLimitQuery,
     paginationOffsetQuery,
     searchQuery,
@@ -16,18 +15,18 @@ const {
 
 const paths = {
     ...generateEndpoint({
-        endpoint: "/campaigns",
+        endpoint: "/activities",
         methods: {
-            // get Campaigns 
+            // get activities
             ...generatePath({
                 method: "get",
-                tags: ["campaigns"],
-                summary: "Get all Campaigns group in system",
+                tags: ["activities"],
+                summary: "Get all activities in system",
                 responses: {
                     ...createResponse({
                         status: "200",
                         description: "OK",
-                        schemaRef: "#/components/schemas/Campaigns",
+                        schemaRef: "#/components/schemas/Activities",
                     }),
                 },
                 parameters: [
@@ -36,88 +35,88 @@ const paths = {
                     createQueryParameter(searchQuery),
                 ],
             }),
-            // create campaigns group
+            // create activity
             ...generatePath({
                 method: "post",
-                tags: ["campaigns"],
-                summary: "Create a new Campaign in system",
+                tags: ["activities"],
+                summary: "Create a new activity in system",
                 requestBody: createRequestBody({
-                    description: "Request payload to create campaigns",
+                    description: "Request payload to create activity",
                     required: true,
-                    contentRef: "#/components/schemas/CampaignFormSchema",
+                    contentRef: "#/components/schemas/ActivityFormSchema",
                 }),
                 responses: {
                     ...createResponse({
                         status: "201",
                         description: "OK",
-                        schemaRef: "#/components/schemas/CampaignTableSchema",
+                        schemaRef: "#/components/schemas/ActivityTableSchema",
                     }),
                 },
             }),
-            // delete Campaigns group
+            // delete activity
             ...generatePath({
                 method: "delete",
-                tags: ["campaigns"],
-                summary: "Delete a Campaign group in system",
+                tags: ["activities"],
+                summary: "Delete a activity in system",
                 requestBody: createRequestBody({
-                    description: "Request payload for delete Campaign group",
+                    description: "Request payload for delete activity",
                     required: true,
-                    contentRef: "#/components/requestBodies/deleteCampaignPayload",
+                    contentRef: "#/components/requestBodies/deleteActivityPayload",
                 }),
                 responses: {
                     ...createResponse({
                         status: "202",
                         description: "OK",
-                        schemaRef: "#/components/schemas/CampaignTableSchema",
+                        schemaRef: "#/components/schemas/ActivityTableSchema",
                     }),
                 },
             }),
         },
     }),
-    // update single Campaigns group
+    // update single activity
     ...generateEndpoint({
-        endpoint: "/campaigns/{campaignId}",
+        endpoint: "/activities/{activityId}",
         methods: {
             ...generatePath({
                 method: "patch",
-                tags: ["campaigns"],
-                summary: "Update a Campaign in system",
+                tags: ["activities"],
+                summary: "Update a activity in system",
                 responses: {
                     ...createResponse({
                         status: "200",
                         description: "OK",
-                        schemaRef: "#/components/schemas/CampaignTableSchema",
+                        schemaRef: "#/components/schemas/ActivityTableSchema",
                     }),
                 },
                 requestBody: createRequestBody({
-                    description: "Request payload to update Campaigns",
+                    description: "Request payload to update activity",
                     required: true,
-                    contentRef: "#/components/schemas/CampaignFormSchema",
+                    contentRef: "#/components/schemas/ActivityFormSchema",
                 }),
                 parameters: [
-                    createPathParameter(campaignIdParam),
+                    createPathParameter(activityIdParam),
                 ],
             }),
         },
     }),
-    // bulk update Campaigns group
+    // bulk update activities
     ...generateEndpoint({
-        endpoint: "/campaigns/bulk",
+        endpoint: "/activities/bulk",
         methods: {
             ...generatePath({
                 method: "patch",
-                tags: ["campaigns"],
-                summary: "Bulk Update campaigns in system",
+                tags: ["activities"],
+                summary: "Bulk Update activities in system",
                 requestBody: createRequestBody({
-                    description: "Request payload to bulk update bulk campaigns",
+                    description: "Request payload to bulk update bulk activities",
                     required: true,
-                    contentRef: "#/components/requestBodies/bulkEditCampaignPayload",
+                    contentRef: "#/components/requestBodies/bulkEditActivitiesPayload",
                 }),
                 responses: {
                     ...createResponse({
                         status: "200",
                         description: "OK",
-                        schemaRef: "#/components/schemas/CampaignFormSchema",
+                        schemaRef: "#/components/schemas/ActivityFormSchema",
                     }),
                 },
             }),
@@ -126,4 +125,3 @@ const paths = {
 };
 // campaigns
 module.exports = paths;
-

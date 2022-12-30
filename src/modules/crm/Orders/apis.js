@@ -1,6 +1,5 @@
 const {
-    campaignIdParam,
-    campaignId,
+    orderIdParam,
     paginationLimitQuery,
     paginationOffsetQuery,
     searchQuery,
@@ -16,18 +15,18 @@ const {
 
 const paths = {
     ...generateEndpoint({
-        endpoint: "/campaigns",
+        endpoint: "/orders",
         methods: {
-            // get Campaigns 
+            // get orders
             ...generatePath({
                 method: "get",
-                tags: ["campaigns"],
-                summary: "Get all Campaigns group in system",
+                tags: ["orders"],
+                summary: "Get all orders in system",
                 responses: {
                     ...createResponse({
                         status: "200",
                         description: "OK",
-                        schemaRef: "#/components/schemas/Campaigns",
+                        schemaRef: "#/components/schemas/Orders",
                     }),
                 },
                 parameters: [
@@ -36,88 +35,88 @@ const paths = {
                     createQueryParameter(searchQuery),
                 ],
             }),
-            // create campaigns group
+            // create order
             ...generatePath({
                 method: "post",
-                tags: ["campaigns"],
-                summary: "Create a new Campaign in system",
+                tags: ["orders"],
+                summary: "Create a new order in system",
                 requestBody: createRequestBody({
-                    description: "Request payload to create campaigns",
+                    description: "Request payload to create order",
                     required: true,
-                    contentRef: "#/components/schemas/CampaignFormSchema",
+                    contentRef: "#/components/schemas/OrderFormSchema",
                 }),
                 responses: {
                     ...createResponse({
                         status: "201",
                         description: "OK",
-                        schemaRef: "#/components/schemas/CampaignTableSchema",
+                        schemaRef: "#/components/schemas/OrderTableSchema",
                     }),
                 },
             }),
-            // delete Campaigns group
+            // delete order
             ...generatePath({
                 method: "delete",
-                tags: ["campaigns"],
-                summary: "Delete a Campaign group in system",
+                tags: ["orders"],
+                summary: "Delete a order in system",
                 requestBody: createRequestBody({
-                    description: "Request payload for delete Campaign group",
+                    description: "Request payload for delete order",
                     required: true,
-                    contentRef: "#/components/requestBodies/deleteCampaignPayload",
+                    contentRef: "#/components/requestBodies/deleteOrderPayload",
                 }),
                 responses: {
                     ...createResponse({
                         status: "202",
                         description: "OK",
-                        schemaRef: "#/components/schemas/CampaignTableSchema",
+                        schemaRef: "#/components/schemas/OrderTableSchema",
                     }),
                 },
             }),
         },
     }),
-    // update single Campaigns group
+    // update single order
     ...generateEndpoint({
-        endpoint: "/campaigns/{campaignId}",
+        endpoint: "/orders/{orderId}",
         methods: {
             ...generatePath({
                 method: "patch",
-                tags: ["campaigns"],
-                summary: "Update a Campaign in system",
+                tags: ["orders"],
+                summary: "Update a order in system",
                 responses: {
                     ...createResponse({
                         status: "200",
                         description: "OK",
-                        schemaRef: "#/components/schemas/CampaignTableSchema",
+                        schemaRef: "#/components/schemas/OrderTableSchema",
                     }),
                 },
                 requestBody: createRequestBody({
-                    description: "Request payload to update Campaigns",
+                    description: "Request payload to update order",
                     required: true,
-                    contentRef: "#/components/schemas/CampaignFormSchema",
+                    contentRef: "#/components/schemas/OrderFormSchema",
                 }),
                 parameters: [
-                    createPathParameter(campaignIdParam),
+                    createPathParameter(orderIdParam),
                 ],
             }),
         },
     }),
-    // bulk update Campaigns group
+    // bulk update orders
     ...generateEndpoint({
-        endpoint: "/campaigns/bulk",
+        endpoint: "/orders/bulk",
         methods: {
             ...generatePath({
                 method: "patch",
-                tags: ["campaigns"],
-                summary: "Bulk Update campaigns in system",
+                tags: ["orders"],
+                summary: "Bulk Update orders in system",
                 requestBody: createRequestBody({
-                    description: "Request payload to bulk update bulk campaigns",
+                    description: "Request payload to bulk update bulk orders",
                     required: true,
-                    contentRef: "#/components/requestBodies/bulkEditCampaignPayload",
+                    contentRef: "#/components/requestBodies/bulkEditOrderPayload",
                 }),
                 responses: {
                     ...createResponse({
                         status: "200",
                         description: "OK",
-                        schemaRef: "#/components/schemas/CampaignFormSchema",
+                        schemaRef: "#/components/schemas/OrderFormSchema",
                     }),
                 },
             }),
@@ -126,4 +125,3 @@ const paths = {
 };
 // campaigns
 module.exports = paths;
-

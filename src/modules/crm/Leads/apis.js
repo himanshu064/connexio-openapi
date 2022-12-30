@@ -17,7 +17,7 @@ const paths = {
     ...generateEndpoint({
         endpoint: "/leads",
         methods: {
-            // get leads
+            // get Leads
             ...generatePath({
                 method: "get",
                 tags: ["leads"],
@@ -35,7 +35,7 @@ const paths = {
                     createQueryParameter(searchQuery),
                 ],
             }),
-            // create Leads
+            // create Lead
             ...generatePath({
                 method: "post",
                 tags: ["leads"],
@@ -53,7 +53,7 @@ const paths = {
                     }),
                 },
             }),
-            // delete lead
+            // delete Lead
             ...generatePath({
                 method: "delete",
                 tags: ["leads"],
@@ -74,7 +74,7 @@ const paths = {
             }),
         },
     }),
-    // update single client role
+    // update single Leads
     ...generateEndpoint({
         endpoint: "/leads/{leadId}",
         methods: {
@@ -97,6 +97,30 @@ const paths = {
                 parameters: [
                     createPathParameter(leadIdParam),
                 ],
+            }),
+        },
+    }),
+
+    // bulk update Leads
+    ...generateEndpoint({
+        endpoint: "/leads/bulk",
+        methods: {
+            ...generatePath({
+                method: "patch",
+                tags: ["leads"],
+                summary: "Bulk Update Leads in system",
+                requestBody: createRequestBody({
+                    description: "Request payload to bulk update bulk leads",
+                    required: true,
+                    contentRef: "#/components/requestBodies/bulkEditLeadPayload",
+                }),
+                responses: {
+                    ...createResponse({
+                        status: "200",
+                        description: "OK",
+                        schemaRef: "#/components/schemas/LeadFormSchema",
+                    }),
+                },
             }),
         },
     }),

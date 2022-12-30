@@ -1,6 +1,5 @@
 const {
-    campaignIdParam,
-    campaignId,
+    contactcampaignIdParam,
     paginationLimitQuery,
     paginationOffsetQuery,
     searchQuery,
@@ -16,18 +15,18 @@ const {
 
 const paths = {
     ...generateEndpoint({
-        endpoint: "/campaigns",
+        endpoint: "/contact_campaign_mapping_rules",
         methods: {
-            // get Campaigns 
+            // get contact campaign
             ...generatePath({
                 method: "get",
-                tags: ["campaigns"],
-                summary: "Get all Campaigns group in system",
+                tags: ["contact_campaign"],
+                summary: "Get all contact campaigns in system",
                 responses: {
                     ...createResponse({
                         status: "200",
                         description: "OK",
-                        schemaRef: "#/components/schemas/Campaigns",
+                        schemaRef: "#/components/schemas/ContactCampaigns",
                     }),
                 },
                 parameters: [
@@ -36,88 +35,88 @@ const paths = {
                     createQueryParameter(searchQuery),
                 ],
             }),
-            // create campaigns group
+            // create Contact Campaign 
             ...generatePath({
                 method: "post",
-                tags: ["campaigns"],
-                summary: "Create a new Campaign in system",
+                tags: ["contact_campaign"],
+                summary: "Create a new Contact Campaign in system",
                 requestBody: createRequestBody({
-                    description: "Request payload to create campaigns",
+                    description: "Request payload to create Contact Campaigns",
                     required: true,
-                    contentRef: "#/components/schemas/CampaignFormSchema",
+                    contentRef: "#/components/schemas/ContactCampaignFormSchema",
                 }),
                 responses: {
                     ...createResponse({
                         status: "201",
                         description: "OK",
-                        schemaRef: "#/components/schemas/CampaignTableSchema",
+                        schemaRef: "#/components/schemas/ContactCampaignTableSchema",
                     }),
                 },
             }),
-            // delete Campaigns group
+            // delete Contact Campaign 
             ...generatePath({
                 method: "delete",
-                tags: ["campaigns"],
-                summary: "Delete a Campaign group in system",
+                tags: ["contact_campaign"],
+                summary: "Delete a Contact Campaign in system",
                 requestBody: createRequestBody({
-                    description: "Request payload for delete Campaign group",
+                    description: "Request payload for delete Contact Campaign",
                     required: true,
-                    contentRef: "#/components/requestBodies/deleteCampaignPayload",
+                    contentRef: "#/components/requestBodies/deleteContactCampaignPayload",
                 }),
                 responses: {
                     ...createResponse({
                         status: "202",
                         description: "OK",
-                        schemaRef: "#/components/schemas/CampaignTableSchema",
+                        schemaRef: "#/components/schemas/ContactCampaignTableSchema",
                     }),
                 },
             }),
         },
     }),
-    // update single Campaigns group
+    // update single contact campaign
     ...generateEndpoint({
-        endpoint: "/campaigns/{campaignId}",
+        endpoint: "/contact_campaign_mapping_rules/{contactcampaignId}",
         methods: {
             ...generatePath({
                 method: "patch",
-                tags: ["campaigns"],
-                summary: "Update a Campaign in system",
+                tags: ["contact_campaign"],
+                summary: "Update a Contact Campaign in system",
                 responses: {
                     ...createResponse({
                         status: "200",
                         description: "OK",
-                        schemaRef: "#/components/schemas/CampaignTableSchema",
+                        schemaRef: "#/components/schemas/ContactCampaignTableSchema",
                     }),
                 },
                 requestBody: createRequestBody({
-                    description: "Request payload to update Campaigns",
+                    description: "Request payload to update activity",
                     required: true,
-                    contentRef: "#/components/schemas/CampaignFormSchema",
+                    contentRef: "#/components/schemas/ContactCampaignFormSchema",
                 }),
                 parameters: [
-                    createPathParameter(campaignIdParam),
+                    createPathParameter(contactcampaignIdParam),
                 ],
             }),
         },
     }),
-    // bulk update Campaigns group
+    // bulk update contact campaign
     ...generateEndpoint({
-        endpoint: "/campaigns/bulk",
+        endpoint: "/contact_campaign_mapping_rules/bulk",
         methods: {
             ...generatePath({
                 method: "patch",
-                tags: ["campaigns"],
-                summary: "Bulk Update campaigns in system",
+                tags: ["contact_campaign"],
+                summary: "Bulk Update Contact Campaign in system",
                 requestBody: createRequestBody({
-                    description: "Request payload to bulk update bulk campaigns",
+                    description: "Request payload to bulk update bulk Contact Campaign",
                     required: true,
-                    contentRef: "#/components/requestBodies/bulkEditCampaignPayload",
+                    contentRef: "#/components/requestBodies/bulkEditContactCampaignPayload",
                 }),
                 responses: {
                     ...createResponse({
                         status: "200",
                         description: "OK",
-                        schemaRef: "#/components/schemas/CampaignFormSchema",
+                        schemaRef: "#/components/schemas/ContactCampaignFormSchema",
                     }),
                 },
             }),
@@ -126,4 +125,3 @@ const paths = {
 };
 // campaigns
 module.exports = paths;
-

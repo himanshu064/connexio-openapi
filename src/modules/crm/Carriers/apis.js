@@ -1,6 +1,5 @@
 const {
-    campaignIdParam,
-    campaignId,
+    carrierIdParam,
     paginationLimitQuery,
     paginationOffsetQuery,
     searchQuery,
@@ -16,18 +15,18 @@ const {
 
 const paths = {
     ...generateEndpoint({
-        endpoint: "/campaigns",
+        endpoint: "/carriers",
         methods: {
-            // get Campaigns 
+            // get carriers
             ...generatePath({
                 method: "get",
-                tags: ["campaigns"],
-                summary: "Get all Campaigns group in system",
+                tags: ["carriers"],
+                summary: "Get all carriers in system",
                 responses: {
                     ...createResponse({
                         status: "200",
                         description: "OK",
-                        schemaRef: "#/components/schemas/Campaigns",
+                        schemaRef: "#/components/schemas/Carriers",
                     }),
                 },
                 parameters: [
@@ -36,88 +35,88 @@ const paths = {
                     createQueryParameter(searchQuery),
                 ],
             }),
-            // create campaigns group
+            // create Carriers
             ...generatePath({
                 method: "post",
-                tags: ["campaigns"],
-                summary: "Create a new Campaign in system",
+                tags: ["carriers"],
+                summary: "Create a new carriers in system",
                 requestBody: createRequestBody({
-                    description: "Request payload to create campaigns",
+                    description: "Request payload to create carrier",
                     required: true,
-                    contentRef: "#/components/schemas/CampaignFormSchema",
+                    contentRef: "#/components/schemas/CarrierFormSchema",
                 }),
                 responses: {
                     ...createResponse({
                         status: "201",
                         description: "OK",
-                        schemaRef: "#/components/schemas/CampaignTableSchema",
+                        schemaRef: "#/components/schemas/CarrierTableSchema",
                     }),
                 },
             }),
-            // delete Campaigns group
+            // delete carrier
             ...generatePath({
                 method: "delete",
-                tags: ["campaigns"],
-                summary: "Delete a Campaign group in system",
+                tags: ["carriers"],
+                summary: "Delete a Carrier in system",
                 requestBody: createRequestBody({
-                    description: "Request payload for delete Campaign group",
+                    description: "Request payload for delete carrier",
                     required: true,
-                    contentRef: "#/components/requestBodies/deleteCampaignPayload",
+                    contentRef: "#/components/requestBodies/deleteCarrierPayload",
                 }),
                 responses: {
                     ...createResponse({
                         status: "202",
                         description: "OK",
-                        schemaRef: "#/components/schemas/CampaignTableSchema",
+                        schemaRef: "#/components/schemas/CarrierTableSchema",
                     }),
                 },
             }),
         },
     }),
-    // update single Campaigns group
+    // update single carriers
     ...generateEndpoint({
-        endpoint: "/campaigns/{campaignId}",
+        endpoint: "/carriers/{carrierId}",
         methods: {
             ...generatePath({
                 method: "patch",
-                tags: ["campaigns"],
-                summary: "Update a Campaign in system",
+                tags: ["carriers"],
+                summary: "Update a carriers in system",
                 responses: {
                     ...createResponse({
                         status: "200",
                         description: "OK",
-                        schemaRef: "#/components/schemas/CampaignTableSchema",
+                        schemaRef: "#/components/schemas/CarrierTableSchema",
                     }),
                 },
                 requestBody: createRequestBody({
-                    description: "Request payload to update Campaigns",
+                    description: "Request payload to update carriers",
                     required: true,
-                    contentRef: "#/components/schemas/CampaignFormSchema",
+                    contentRef: "#/components/schemas/CarrierFormSchema",
                 }),
                 parameters: [
-                    createPathParameter(campaignIdParam),
+                    createPathParameter(carrierIdParam),
                 ],
             }),
         },
     }),
-    // bulk update Campaigns group
+    // bulk update contact campaign
     ...generateEndpoint({
-        endpoint: "/campaigns/bulk",
+        endpoint: "/carriers/bulk",
         methods: {
             ...generatePath({
                 method: "patch",
-                tags: ["campaigns"],
-                summary: "Bulk Update campaigns in system",
+                tags: ["carriers"],
+                summary: "Bulk Update carriers in system",
                 requestBody: createRequestBody({
-                    description: "Request payload to bulk update bulk campaigns",
+                    description: "Request payload to bulk update bulk Carriers",
                     required: true,
-                    contentRef: "#/components/requestBodies/bulkEditCampaignPayload",
+                    contentRef: "#/components/requestBodies/bulkEditCarrierPayload",
                 }),
                 responses: {
                     ...createResponse({
                         status: "200",
                         description: "OK",
-                        schemaRef: "#/components/schemas/CampaignFormSchema",
+                        schemaRef: "#/components/schemas/CarrierFormSchema",
                     }),
                 },
             }),
@@ -126,4 +125,3 @@ const paths = {
 };
 // campaigns
 module.exports = paths;
-

@@ -1,6 +1,5 @@
 const {
-    campaignIdParam,
-    campaignId,
+    dealIdParam,
     paginationLimitQuery,
     paginationOffsetQuery,
     searchQuery,
@@ -16,18 +15,18 @@ const {
 
 const paths = {
     ...generateEndpoint({
-        endpoint: "/campaigns",
+        endpoint: "/deals",
         methods: {
-            // get Campaigns 
+            // get deals
             ...generatePath({
                 method: "get",
-                tags: ["campaigns"],
-                summary: "Get all Campaigns group in system",
+                tags: ["deals"],
+                summary: "Get all deals in system",
                 responses: {
                     ...createResponse({
                         status: "200",
                         description: "OK",
-                        schemaRef: "#/components/schemas/Campaigns",
+                        schemaRef: "#/components/schemas/Deals",
                     }),
                 },
                 parameters: [
@@ -36,88 +35,88 @@ const paths = {
                     createQueryParameter(searchQuery),
                 ],
             }),
-            // create campaigns group
+            // create deals
             ...generatePath({
                 method: "post",
-                tags: ["campaigns"],
-                summary: "Create a new Campaign in system",
+                tags: ["deals"],
+                summary: "Create a new deal in system",
                 requestBody: createRequestBody({
-                    description: "Request payload to create campaigns",
+                    description: "Request payload to create deal",
                     required: true,
-                    contentRef: "#/components/schemas/CampaignFormSchema",
+                    contentRef: "#/components/schemas/DealFormSchema",
                 }),
                 responses: {
                     ...createResponse({
                         status: "201",
                         description: "OK",
-                        schemaRef: "#/components/schemas/CampaignTableSchema",
+                        schemaRef: "#/components/schemas/DealTableSchema",
                     }),
                 },
             }),
-            // delete Campaigns group
+            // delete deals
             ...generatePath({
                 method: "delete",
-                tags: ["campaigns"],
-                summary: "Delete a Campaign group in system",
+                tags: ["deals"],
+                summary: "Delete a deal in system",
                 requestBody: createRequestBody({
-                    description: "Request payload for delete Campaign group",
+                    description: "Request payload for delete deal",
                     required: true,
-                    contentRef: "#/components/requestBodies/deleteCampaignPayload",
+                    contentRef: "#/components/requestBodies/deleteDealPayload",
                 }),
                 responses: {
                     ...createResponse({
                         status: "202",
                         description: "OK",
-                        schemaRef: "#/components/schemas/CampaignTableSchema",
+                        schemaRef: "#/components/schemas/DealTableSchema",
                     }),
                 },
             }),
         },
     }),
-    // update single Campaigns group
+    // update single deal
     ...generateEndpoint({
-        endpoint: "/campaigns/{campaignId}",
+        endpoint: "/deals/{dealId}",
         methods: {
             ...generatePath({
                 method: "patch",
-                tags: ["campaigns"],
-                summary: "Update a Campaign in system",
+                tags: ["deals"],
+                summary: "Update a deal in system",
                 responses: {
                     ...createResponse({
                         status: "200",
                         description: "OK",
-                        schemaRef: "#/components/schemas/CampaignTableSchema",
+                        schemaRef: "#/components/schemas/DealTableSchema",
                     }),
                 },
                 requestBody: createRequestBody({
-                    description: "Request payload to update Campaigns",
+                    description: "Request payload to update deal",
                     required: true,
-                    contentRef: "#/components/schemas/CampaignFormSchema",
+                    contentRef: "#/components/schemas/DealFormSchema",
                 }),
                 parameters: [
-                    createPathParameter(campaignIdParam),
+                    createPathParameter(dealIdParam),
                 ],
             }),
         },
     }),
-    // bulk update Campaigns group
+    // bulk update deals
     ...generateEndpoint({
-        endpoint: "/campaigns/bulk",
+        endpoint: "/deals/bulk",
         methods: {
             ...generatePath({
                 method: "patch",
-                tags: ["campaigns"],
-                summary: "Bulk Update campaigns in system",
+                tags: ["deals"],
+                summary: "Bulk Update deals in system",
                 requestBody: createRequestBody({
-                    description: "Request payload to bulk update bulk campaigns",
+                    description: "Request payload to bulk update bulk deals",
                     required: true,
-                    contentRef: "#/components/requestBodies/bulkEditCampaignPayload",
+                    contentRef: "#/components/requestBodies/bulkEditDealPayload",
                 }),
                 responses: {
                     ...createResponse({
                         status: "200",
                         description: "OK",
-                        schemaRef: "#/components/schemas/CampaignFormSchema",
+                        schemaRef: "#/components/schemas/DealFormSchema",
                     }),
                 },
             }),
@@ -126,4 +125,3 @@ const paths = {
 };
 // campaigns
 module.exports = paths;
-

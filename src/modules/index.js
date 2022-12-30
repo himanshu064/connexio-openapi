@@ -45,6 +45,13 @@ module.exports = {
     // crm schemas
     ...crmPortal.Campaigns.schemas,
     ...crmPortal.Leads.schemas,
+    ...crmPortal.Customers.schemas,
+    ...crmPortal.Deals.schemas,
+    ...crmPortal.Orders.schemas,
+    ...crmPortal.Products.schemas,
+    ...crmPortal.Activities.schemas,
+    ...crmPortal.ContactCampaign.schemas,
+    ...crmPortal.Carriers.schemas,
   },
   paths: {
     // backoffice apis
@@ -87,6 +94,13 @@ module.exports = {
     // crm apis
     ...crmPortal.Campaigns.apis,
     ...crmPortal.Leads.apis,
+    ...crmPortal.Customers.apis,
+    ...crmPortal.Deals.apis,
+    ...crmPortal.Orders.apis,
+    ...crmPortal.Products.apis,
+    ...crmPortal.Activities.apis,
+    ...crmPortal.ContactCampaign.apis,
+    ...crmPortal.Carriers.apis,
   },
   requestBodies: {
     // backoffice body
@@ -129,5 +143,12 @@ module.exports = {
     // crm body
     ...crmPortal.Campaigns.body,
     ...crmPortal.Leads.body,
+    ...crmPortal.Customers.body,
+    ...crmPortal.Deals.body,
+    ...crmPortal.Orders.body,
+    ...crmPortal.Products.body,
+    ...crmPortal.Activities.body,
+    ...crmPortal.ContactCampaign.body,
+    ...crmPortal.Carriers.body,
   },
 };

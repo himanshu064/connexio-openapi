@@ -1,17 +1,16 @@
+const { CustomerFormSchema } = require("./schemas");
 
-const { LeadFormSchema } = require("./schemas");
-
-const deleteLeadPayload = {
+const deleteCustomerPayload = {
     title: "",
     type: "array",
     items: [42],
 };
 
-const bulkEditLeadPayload = {
+const bulkEditCustomerPayload = {
     title: "",
     type: "object",
     properties: {
-        fields: LeadFormSchema,
+        fields: CustomerFormSchema,
         objects: {
             type: "array",
             items: [2, 3],
@@ -20,5 +19,9 @@ const bulkEditLeadPayload = {
 };
 
 module.exports = {
-    deleteLeadPayload,
+    deleteCustomerPayload,
+    bulkEditCustomerPayload,
 };
+
+
+

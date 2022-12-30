@@ -1,17 +1,16 @@
+const { ActivityFormSchema } = require("./schemas");
 
-const { LeadFormSchema } = require("./schemas");
-
-const deleteLeadPayload = {
+const deleteActivityPayload = {
     title: "",
     type: "array",
     items: [42],
 };
 
-const bulkEditLeadPayload = {
+const bulkEditActivitiesPayload = {
     title: "",
     type: "object",
     properties: {
-        fields: LeadFormSchema,
+        fields: ActivityFormSchema,
         objects: {
             type: "array",
             items: [2, 3],
@@ -20,5 +19,9 @@ const bulkEditLeadPayload = {
 };
 
 module.exports = {
-    deleteLeadPayload,
+    deleteActivityPayload,
+    bulkEditActivitiesPayload,
 };
+
+
+
