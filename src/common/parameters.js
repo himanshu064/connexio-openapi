@@ -166,6 +166,59 @@ module.exports = {
     name: "carrierId",
     description: "carrier Id",
   }),
+  channelIdParam: createIdParam({
+    name: "channelId",
+    description: "channel Id",
+  }),
+  dealStageIdParam: createIdParam({
+    name: "dealStageId",
+    description: "dealStage Id",
+  }),
+  dealTypeIdParam: createIdParam({
+    name: "dealTypeId",
+    description: "dealType Id",
+  }),
+  contactSourceIdParam: createIdParam({
+    name: "contactSourceId",
+    description: "contactSource Id",
+  }),
+  leadStatusIdParam: createIdParam({
+    name: "leadStatusId",
+    description: "leadStatus Id",
+  }),
+  activityPurposeIdParam: createIdParam({
+    name: "activityPurposeId",
+    description: "activityPurpose Id",
+  }),
+  businessCategoryIdParam: createIdParam({
+    name: "businessCategoryId",
+    description: "businessCategory Id",
+  }),
+  productCategoryIdParam: createIdParam({
+    name: "productCategoryId",
+    description: "productCategory Id",
+  }),
+  contactFieldIdParam: createIdParam({
+    name: "contactFieldId",
+    description: "contactField Id",
+  }),
+  orderFieldIdParam: createIdParam({
+    name: "orderFieldId",
+    description: "orderField Id",
+  }),
+  dealFieldIdParam: createIdParam({
+    name: "dealFieldId",
+    description: "dealField Id",
+  }),
+  productFieldIdParam: createIdParam({
+    name: "productFieldId",
+    description: "productField Id",
+  }),
+  campaignFieldIdParam: createIdParam({
+    name: "campaignFieldId",
+    description: "campaignField Id",
+  }),
+
 
   // query params
   paginationLimitQuery: {
