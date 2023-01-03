@@ -218,6 +218,26 @@ module.exports = {
     name: "campaignFieldId",
     description: "campaignField Id",
   }),
+  audioStoreIdParam: createIdParam({
+    name: "audioStoreId",
+    description: "audioStore Id",
+  }),
+  userPhoneIdParam: createIdParam({
+    name: "userPhoneId",
+    description: "userPhone Id",
+  }),
+  organizationalPhoneIdParam: createIdParam({
+    name: "organizationalPhoneId",
+    description: "organizationalPhone Id",
+  }),
+  voicemailMessageIdParam: createIdParam({
+    name: "voicemailMessageId",
+    description: "voicemailMessage Id",
+  }),
+  voicemailBoxIdParam: createIdParam({
+    name: "voicemailBoxId",
+    description: "voicemailBox Id",
+  }),
 
 
   // query params
