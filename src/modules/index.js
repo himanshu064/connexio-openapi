@@ -2,7 +2,7 @@ const backoffice = require("./backoffice");
 const switchModule = require("./switch");
 const employeePortal = require("./employee-portal");
 const crm = require("./crm");
-const monitoring = require("./monitoring");
+// const monitoring = require("./monitoring");
 const pbx = require("./pbx");
 
 module.exports = {
@@ -66,15 +66,21 @@ module.exports = {
     ...crm.DealField.schemas,
     ...crm.ProductField.schemas,
     ...crm.CampaignField.schemas,
-    // monitoring schemas
-    ...monitoring.AgentTimeReport.schemas,
-    ...monitoring.RecordingVoices.schemas,
+    // monitoring schemas (for now its temporary commented)
+    // ...monitoring.AgentTimeReport.schemas,
+    // ...monitoring.RecordingVoices.schemas,
     // pbx schemas
     ...pbx.UserPhones.schemas,
     ...pbx.OrganizationalPhones.schemas,
     ...pbx.VoicemailMessages.schemas,
     ...pbx.VoicemailBoxes.schemas,
     ...pbx.AudioStore.schemas,
+    ...pbx.ListQueues.schemas,
+    ...pbx.ListWorkspaceQueues.schemas,
+    ...pbx.ListDialerQueues.schemas,
+    ...pbx.ListDIDs.schemas,
+    ...pbx.DIDOrders.schemas,
+    // ...pbx.OrderDID.schemas,
 
   },
   paths: {
@@ -137,15 +143,21 @@ module.exports = {
     ...crm.DealField.apis,
     ...crm.ProductField.apis,
     ...crm.CampaignField.apis,
-    // monitoring apis
-    ...monitoring.AgentTimeReport.apis,
-    ...monitoring.RecordingVoices.apis,
+    // monitoring apis (for now its temporary commented)
+    // ...monitoring.AgentTimeReport.apis,
+    // ...monitoring.RecordingVoices.apis,
     // pbx apis
     ...pbx.UserPhones.apis,
     ...pbx.OrganizationalPhones.apis,
     ...pbx.VoicemailMessages.apis,
     ...pbx.VoicemailBoxes.apis,
     ...pbx.AudioStore.apis,
+    ...pbx.ListQueues.apis,
+    ...pbx.ListWorkspaceQueues.apis,
+    ...pbx.ListDialerQueues.apis,
+    ...pbx.ListDIDs.apis,
+    ...pbx.DIDOrders.apis,
+    // ...pbx.OrderDID.apis,
   },
   requestBodies: {
     // backoffice body
@@ -207,14 +219,20 @@ module.exports = {
     ...crm.DealField.body,
     ...crm.ProductField.body,
     ...crm.CampaignField.body,
-    // monitoring body
-    ...monitoring.AgentTimeReport.body,
-    ...monitoring.RecordingVoices.body,
+    // monitoring body (for now its temporary commented)
+    // ...monitoring.AgentTimeReport.body,
+    // ...monitoring.RecordingVoices.body,
     // pbx body
     ...pbx.UserPhones.body,
     ...pbx.OrganizationalPhones.body,
     ...pbx.VoicemailMessages.body,
     ...pbx.VoicemailBoxes.body,
     ...pbx.AudioStore.body,
+    ...pbx.ListQueues.body,
+    ...pbx.ListWorkspaceQueues.body,
+    ...pbx.ListDialerQueues.body,
+    ...pbx.ListDIDs.body,
+    ...pbx.DIDOrders.body,
+    // ...pbx.OrderDID.body,
   },
 };

@@ -238,6 +238,18 @@ module.exports = {
     name: "voicemailBoxId",
     description: "voicemailBox Id",
   }),
+  listQueueIdParam: createIdParam({
+    name: "listQueueId",
+    description: "listQueue Id",
+  }),
+  listWorkspaceQueueIdParam: createIdParam({
+    name: "listWorkspaceQueueId",
+    description: "listWorkspaceQueue Id",
+  }),
+  listDialerQueueIdParam: createIdParam({
+    name: "listDialerQueueId",
+    description: "listDialerQueue Id",
+  }),
 
 
   // query params
