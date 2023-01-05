@@ -57,7 +57,7 @@ const paths = {
             ...generatePath({
                 method: "delete",
                 tags: ["ip_security"],
-                summary: "Deletes a audio store in system",
+                summary: "Deletes a ip_security in system",
                 requestBody: createRequestBody({
                     description: "Request payload for delete ip security",
                     required: true,
@@ -79,8 +79,8 @@ const paths = {
         methods: {
             ...generatePath({
                 method: "patch",
-                tags: ["audio_store"],
-                summary: "Update a audio store in system",
+                tags: ["ip_security"],
+                summary: "Update a ip_security in system",
                 responses: {
                     ...createResponse({
                         status: "200",
@@ -89,7 +89,7 @@ const paths = {
                     }),
                 },
                 requestBody: createRequestBody({
-                    description: "Request payload to update audio store",
+                    description: "Request payload to update ip_security",
                     required: true,
                     contentRef: "#/components/schemas/IPSecurityFormSchema",
                 }),
@@ -102,14 +102,14 @@ const paths = {
 
     // bulk update audios
     ...generateEndpoint({
-        endpoint: "/audios/bulk",
+        endpoint: "/ip_security/bulk",
         methods: {
             ...generatePath({
                 method: "patch",
-                tags: ["audio_store"],
-                summary: "Bulk Update audios in system",
+                tags: ["ip_security"],
+                summary: "Bulk Update ip_security in system",
                 requestBody: createRequestBody({
-                    description: "Request payload to bulk update bulk audios",
+                    description: "Request payload to bulk update bulk ip_security",
                     required: true,
                     contentRef: "#/components/requestBodies/bulkEditIPSecuritiesPayload",
                 }),

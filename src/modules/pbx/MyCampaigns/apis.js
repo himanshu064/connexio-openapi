@@ -20,7 +20,7 @@ const paths = {
             // get audios
             ...generatePath({
                 method: "get",
-                tags: ["dialer_my_campaigns"],
+                tags: ["dialer_Compaign"],
                 summary: "Get all dialer my campaigns in system",
                 responses: {
                     ...createResponse({
@@ -38,7 +38,7 @@ const paths = {
             // create audios
             ...generatePath({
                 method: "post",
-                tags: ["audio_store"],
+                tags: ["dialer_Compaign"],
                 summary: "Creates a new dialer_my_campaigns in system",
                 requestBody: createRequestBody({
                     description: "Request payload to create dialer_my_campaigns",
@@ -56,7 +56,7 @@ const paths = {
             // delete audios
             ...generatePath({
                 method: "delete",
-                tags: ["audio_store"],
+                tags: ["dialer_Compaign"],
                 summary: "Deletes a dialer_my_campaigns in system",
                 requestBody: createRequestBody({
                     description: "Request payload for delete dialer_my_campaigns",
@@ -79,7 +79,7 @@ const paths = {
         methods: {
             ...generatePath({
                 method: "patch",
-                tags: ["audio_store"],
+                tags: ["dialer_Compaign"],
                 summary: "Update a dialer_my_campaigns in system",
                 responses: {
                     ...createResponse({
@@ -106,10 +106,10 @@ const paths = {
         methods: {
             ...generatePath({
                 method: "patch",
-                tags: ["audio_store"],
+                tags: ["dialer_Compaign"],
                 summary: "Bulk Update audios in system",
                 requestBody: createRequestBody({
-                    description: "Request payload to bulk update bulk audios",
+                    description: "Request payload to bulk update bulk campaigns",
                     required: true,
                     contentRef: "#/components/requestBodies/bulkEditMyCampaignPayload",
                 }),

@@ -20,7 +20,7 @@ const paths = {
             // get list_workspace_queues
             ...generatePath({
                 method: "get",
-                tags: ["list_workspace_queues"],
+                tags: ["workspace_queues"],
                 summary: "Get all list workspace queues in system",
                 responses: {
                     ...createResponse({
@@ -38,7 +38,7 @@ const paths = {
             // create list_workspace_queue
             ...generatePath({
                 method: "post",
-                tags: ["list_workspace_queues"],
+                tags: ["workspace_queues"],
                 summary: "Create a new list workspace queue in system",
                 requestBody: createRequestBody({
                     description: "Request payload to create list workspace queue",
@@ -56,7 +56,7 @@ const paths = {
             // delete list_workspace_queue
             ...generatePath({
                 method: "delete",
-                tags: ["list_workspace_queues"],
+                tags: ["workspace_queues"],
                 summary: "Delete a list workspace queue in system",
                 requestBody: createRequestBody({
                     description: "Request payload for delete list workspace queue",
@@ -79,7 +79,7 @@ const paths = {
         methods: {
             ...generatePath({
                 method: "patch",
-                tags: ["list_workspace_queues"],
+                tags: ["workspace_queues"],
                 summary: "Update a list workspace queue in system",
                 responses: {
                     ...createResponse({
@@ -105,7 +105,7 @@ const paths = {
         methods: {
             ...generatePath({
                 method: "patch",
-                tags: ["list_workspace_queues"],
+                tags: ["workspace_queues"],
                 summary: "Bulk Update list workspace queue in system",
                 requestBody: createRequestBody({
                     description: "Request payload to bulk update bulk list workspace queue",

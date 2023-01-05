@@ -20,7 +20,7 @@ const paths = {
             // get address_book_entries
             ...generatePath({
                 method: "get",
-                tags: ["address_book_entries"],
+                tags: ["address_book"],
                 summary: "Get all address book entries in system",
                 responses: {
                     ...createResponse({
@@ -38,7 +38,7 @@ const paths = {
             // create address_book_entries
             ...generatePath({
                 method: "post",
-                tags: ["address_book_entries"],
+                tags: ["address_book"],
                 summary: "Creates a new address book entry in system",
                 requestBody: createRequestBody({
                     description: "Request payload to create address book entry",
@@ -56,7 +56,7 @@ const paths = {
             // delete address_book_entries
             ...generatePath({
                 method: "delete",
-                tags: ["address_book_entries"],
+                tags: ["address_book"],
                 summary: "Deletes a address book entries in system",
                 requestBody: createRequestBody({
                     description: "Request payload for delete address book entries",
@@ -79,7 +79,7 @@ const paths = {
         methods: {
             ...generatePath({
                 method: "patch",
-                tags: ["address_book_entries"],
+                tags: ["address_book"],
                 summary: "Update a address book entries in system",
                 responses: {
                     ...createResponse({
@@ -106,7 +106,7 @@ const paths = {
         methods: {
             ...generatePath({
                 method: "patch",
-                tags: ["audio_store"],
+                tags: ["address_book"],
                 summary: "Bulk Update address book entries in system",
                 requestBody: createRequestBody({
                     description: "Request payload to bulk update bulk address book entries",

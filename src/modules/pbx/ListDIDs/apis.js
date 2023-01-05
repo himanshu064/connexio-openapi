@@ -17,7 +17,7 @@ const paths = {
             // get dids
             ...generatePath({
                 method: "get",
-                tags: ["listdids"],
+                tags: ["dids"],
                 summary: "Get all list dids in system",
                 responses: {
                     ...createResponse({

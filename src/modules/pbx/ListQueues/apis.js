@@ -20,7 +20,7 @@ const paths = {
             // get queues
             ...generatePath({
                 method: "get",
-                tags: ["list_queues"],
+                tags: ["queues"],
                 summary: "Get all queues in system",
                 responses: {
                     ...createResponse({
@@ -38,7 +38,7 @@ const paths = {
             // create List Queue
             ...generatePath({
                 method: "post",
-                tags: ["list_queues"],
+                tags: ["queues"],
                 summary: "Create a new queue in system",
                 requestBody: createRequestBody({
                     description: "Request payload to create List Queue",
@@ -56,7 +56,7 @@ const paths = {
             // delete List Queue
             ...generatePath({
                 method: "delete",
-                tags: ["list_queues"],
+                tags: ["queues"],
                 summary: "Delete a list queue in system",
                 requestBody: createRequestBody({
                     description: "Request payload for delete List Queue",
@@ -79,7 +79,7 @@ const paths = {
         methods: {
             ...generatePath({
                 method: "patch",
-                tags: ["list_queues"],
+                tags: ["queues"],
                 summary: "Update a list queue in system",
                 responses: {
                     ...createResponse({
@@ -105,7 +105,7 @@ const paths = {
         methods: {
             ...generatePath({
                 method: "patch",
-                tags: ["list_queues"],
+                tags: ["queues"],
                 summary: "Bulk Update list queue in system",
                 requestBody: createRequestBody({
                     description: "Request payload to bulk update bulk list queue",

@@ -17,7 +17,7 @@ const paths = {
             // get monitoring
             ...generatePath({
                 method: "get",
-                tags: ["call_monitoring"],
+                tags: ["monitoring"],
                 summary: "Get all monitoring logs in system",
                 responses: {
                     ...createResponse({

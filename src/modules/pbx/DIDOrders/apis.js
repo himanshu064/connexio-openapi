@@ -17,7 +17,7 @@ const paths = {
             // get did orders
             ...generatePath({
                 method: "get",
-                tags: ["did_orders"],
+                tags: ["dids"],
                 summary: "Get all did orders in system",
                 responses: {
                     ...createResponse({
