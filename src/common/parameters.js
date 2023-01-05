@@ -250,7 +250,26 @@ module.exports = {
     name: "listDialerQueueId",
     description: "listDialerQueue Id",
   }),
-
+  addressBookIdParam: createIdParam({
+    name: "addressBookId",
+    description: "addressBook Id",
+  }),
+  ipSecurityIdParam: createIdParam({
+    name: "ipSecurityId",
+    description: "ipSecurity Id",
+  }),
+  myCampaignIdParam: createIdParam({
+    name: "myCampaignId",
+    description: "myCampaign Id",
+  }),
+  organizationCampaignIdParam: createIdParam({
+    name: "organizationCampaignId",
+    description: "organizationCampaign Id",
+  }),
+  userCampaignIdParam: createIdParam({
+    name: "userCampaignId",
+    description: "userCampaign Id",
+  }),
 
   // query params
   paginationLimitQuery: {

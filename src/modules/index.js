@@ -80,7 +80,14 @@ module.exports = {
     ...pbx.ListDialerQueues.schemas,
     ...pbx.ListDIDs.schemas,
     ...pbx.DIDOrders.schemas,
-    // ...pbx.OrderDID.schemas,
+    ...pbx.AddressBook.schemas,
+    ...pbx.Recordings.schemas,
+    ...pbx.CallLogs.schemas,
+    ...pbx.MessageLogs.schemas,
+    ...pbx.CallMonitoring.schemas,
+    ...pbx.IPSecurity.schemas,
+    ...pbx.MyCampaigns.schemas,
+
 
   },
   paths: {
@@ -157,7 +164,13 @@ module.exports = {
     ...pbx.ListDialerQueues.apis,
     ...pbx.ListDIDs.apis,
     ...pbx.DIDOrders.apis,
-    // ...pbx.OrderDID.apis,
+    ...pbx.AddressBook.apis,
+    ...pbx.Recordings.apis,
+    ...pbx.CallLogs.apis,
+    ...pbx.MessageLogs.apis,
+    ...pbx.CallMonitoring.apis,
+    ...pbx.IPSecurity.apis,
+    ...pbx.MyCampaigns.apis,
   },
   requestBodies: {
     // backoffice body
@@ -233,6 +246,12 @@ module.exports = {
     ...pbx.ListDialerQueues.body,
     ...pbx.ListDIDs.body,
     ...pbx.DIDOrders.body,
-    // ...pbx.OrderDID.body,
+    ...pbx.AddressBook.body,
+    ...pbx.Recordings.body,
+    ...pbx.CallLogs.body,
+    ...pbx.MessageLogs.body,
+    ...pbx.CallMonitoring.body,
+    ...pbx.IPSecurity.body,
+    ...pbx.MyCampaigns.body,
   },
 };

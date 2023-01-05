@@ -8,7 +8,13 @@ const ListWorkspaceQueues = require("./ListWorkspaceQueues");
 const ListDialerQueues = require("./ListDialerQueues");
 const ListDIDs = require("./ListDIDs");
 const DIDOrders = require("./DIDOrders");
-// const OrderDID = require("./OrderDID");
+const AddressBook = require("./AddressBook");
+const Recordings = require("./Recordings");
+const CallLogs = require("./CallLogs");
+const MessageLogs = require("./MessageLogs");
+const CallMonitoring = require("./CallMonitoring");
+const IPSecurity = require("./IPSecurity");
+const MyCampaigns = require("./MyCampaigns");
 
 module.exports = {
     AudioStore,
@@ -21,5 +27,11 @@ module.exports = {
     ListDialerQueues,
     ListDIDs,
     DIDOrders,
-    // OrderDID,
+    AddressBook,
+    Recordings,
+    CallLogs,
+    MessageLogs,
+    CallMonitoring,
+    IPSecurity,
+    MyCampaigns,
 };
