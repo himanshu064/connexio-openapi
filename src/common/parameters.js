@@ -270,6 +270,22 @@ module.exports = {
     name: "userCampaignId",
     description: "userCampaign Id",
   }),
+  myDNCProfileIdParam: createIdParam({
+    name: "myDNCProfileId",
+    description: "myDNCProfile Id",
+  }),
+  organizationDNCProfileIdParam: createIdParam({
+    name: "organizationDNCProfileId",
+    description: "organizationDNCProfile Id",
+  }),
+  userDNCProfileIdParam: createIdParam({
+    name: "userDNCProfileId",
+    description: "userDNCProfile Id",
+  }),
+  omniChannelIdParam: createIdParam({
+    name: "omniChannelId",
+    description: "omniChannel Id",
+  }),
 
   // query params
   paginationLimitQuery: {

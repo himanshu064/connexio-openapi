@@ -15,6 +15,12 @@ const MessageLogs = require("./MessageLogs");
 const CallMonitoring = require("./CallMonitoring");
 const IPSecurity = require("./IPSecurity");
 const MyCampaigns = require("./MyCampaigns");
+const OrganisationCampaigns = require("./OrganisationCampaigns");
+const UserCampaigns = require("./UserCampaigns");
+const MyDNCProfiles = require("./MyDNCProfiles");
+const OrganizationDNCProfiles = require("./OrganizationDNCProfiles");
+const UserDNCProfiles = require("./UserDNCProfiles");
+const OmniChannels = require("./OmniChannels");
 
 module.exports = {
     AudioStore,
@@ -34,4 +40,10 @@ module.exports = {
     CallMonitoring,
     IPSecurity,
     MyCampaigns,
+    OrganisationCampaigns,
+    UserCampaigns,
+    MyDNCProfiles,
+    OrganizationDNCProfiles,
+    UserDNCProfiles,
+    OmniChannels,
 };

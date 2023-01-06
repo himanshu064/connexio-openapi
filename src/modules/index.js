@@ -87,6 +87,12 @@ module.exports = {
     ...pbx.CallMonitoring.schemas,
     ...pbx.IPSecurity.schemas,
     ...pbx.MyCampaigns.schemas,
+    ...pbx.OrganisationCampaigns.schemas,
+    ...pbx.UserCampaigns.schemas,
+    ...pbx.MyDNCProfiles.schemas,
+    ...pbx.OrganizationDNCProfiles.schemas,
+    ...pbx.UserDNCProfiles.schemas,
+    ...pbx.OmniChannels.schemas,
 
 
   },
@@ -171,6 +177,12 @@ module.exports = {
     ...pbx.CallMonitoring.apis,
     ...pbx.IPSecurity.apis,
     ...pbx.MyCampaigns.apis,
+    ...pbx.OrganisationCampaigns.apis,
+    ...pbx.MyDNCProfiles.apis,
+    ...pbx.UserCampaigns.apis,
+    ...pbx.OrganizationDNCProfiles.apis,
+    ...pbx.UserDNCProfiles.apis,
+    ...pbx.OmniChannels.apis,
   },
   requestBodies: {
     // backoffice body
@@ -253,5 +265,11 @@ module.exports = {
     ...pbx.CallMonitoring.body,
     ...pbx.IPSecurity.body,
     ...pbx.MyCampaigns.body,
+    ...pbx.OrganisationCampaigns.body,
+    ...pbx.UserCampaigns.body,
+    ...pbx.MyDNCProfiles.body,
+    ...pbx.OrganizationDNCProfiles.body,
+    ...pbx.UserDNCProfiles.body,
+    ...pbx.OmniChannels.body,
   },
 };
