@@ -4,6 +4,7 @@ const employeePortal = require("./employee-portal");
 const crm = require("./crm");
 // const monitoring = require("./monitoring");
 const pbx = require("./pbx");
+const worspaceConfiguration = require("./worspace-configuration");
 
 module.exports = {
   schemas: {
@@ -94,7 +95,11 @@ module.exports = {
     ...pbx.UserDNCProfiles.schemas,
     ...pbx.OmniChannels.schemas,
 
-
+    // Workspace Configurations
+    ...worspaceConfiguration.QueueConfigurations.schemas,
+    ...worspaceConfiguration.DispositionStatus.schemas,
+    ...worspaceConfiguration.Workspaces.schemas,
+    ...worspaceConfiguration.Webhooks.schemas,
   },
   paths: {
     // backoffice apis
@@ -183,6 +188,12 @@ module.exports = {
     ...pbx.OrganizationDNCProfiles.apis,
     ...pbx.UserDNCProfiles.apis,
     ...pbx.OmniChannels.apis,
+
+    // Workspace Configurations
+    ...worspaceConfiguration.QueueConfigurations.apis,
+    ...worspaceConfiguration.DispositionStatus.apis,
+    ...worspaceConfiguration.Workspaces.apis,
+    ...worspaceConfiguration.Webhooks.apis,
   },
   requestBodies: {
     // backoffice body
@@ -271,5 +282,11 @@ module.exports = {
     ...pbx.OrganizationDNCProfiles.body,
     ...pbx.UserDNCProfiles.body,
     ...pbx.OmniChannels.body,
+
+    // Workspace Configurations
+    ...worspaceConfiguration.QueueConfigurations.body,
+    ...worspaceConfiguration.DispositionStatus.body,
+    ...worspaceConfiguration.Workspaces.body,
+    ...worspaceConfiguration.Webhooks.body,
   },
 };

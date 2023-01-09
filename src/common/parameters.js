@@ -286,6 +286,22 @@ module.exports = {
     name: "omniChannelId",
     description: "omniChannel Id",
   }),
+  queueConfigurationIdParam: createIdParam({
+    name: "queueConfigurationId",
+    description: "Queue configuration id",
+  }),
+  dispositionStatusIdParam: createIdParam({
+    name: "dispositionStatusId",
+    description: "Disposition status id",
+  }),
+  workspaceIdParam: createIdParam({
+    name: "workspaceId",
+    description: "Workspace id",
+  }),
+  templateIdParam: createIdParam({
+    name: "templateId",
+    description: "Template id",
+  }),
 
   // query params
   paginationLimitQuery: {
