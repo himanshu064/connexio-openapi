@@ -349,5 +349,115 @@ const paths = {
       }),
     },
   }),
+
+  // Task Events
+  ...generateEndpoint({
+    endpoint: "/actions/task_event/request_template",
+    methods: {
+      // get ticket_conclusion_started
+      ...generatePath({
+        method: "get",
+        tags: ["webhooks"],
+        summary: "Get all task events started",
+        responses: {
+          ...createResponse({
+            status: "200",
+            description: "OK",
+            schemaRef: "#/components/schemas/WebHooksTaskEvents",
+          }),
+        },
+        parameters: [
+          createQueryParameter(paginationLimitQuery),
+          createQueryParameter(paginationOffsetQuery),
+          createQueryParameter(searchQuery),
+        ],
+      }),
+      // create Task Assigned
+      ...generatePath({
+        method: "post",
+        tags: ["webhooks"],
+        summary: "Create a new task event in system",
+        requestBody: createRequestBody({
+          description: "Request payload to create task event",
+          required: true,
+          contentRef: "#/components/schemas/WebHooksTaskEventFormSchema",
+        }),
+        responses: {
+          ...createResponse({
+            status: "201",
+            description: "OK",
+            schemaRef: "#/components/schemas/WebHooksTaskEventTableSchema",
+          }),
+        },
+      }),
+      // delete workspaces
+      ...generatePath({
+        method: "delete",
+        tags: ["webhooks"],
+        summary: "Delete a task event in system",
+        requestBody: createRequestBody({
+          description: "Request payload for delete task event",
+          required: true,
+          contentRef:
+            "#/components/requestBodies/deleteWebHooksTaskEventsPayload",
+        }),
+        responses: {
+          ...createResponse({
+            status: "202",
+            description: "OK",
+            schemaRef: "#/components/schemas/WebHooksTaskEventTableSchema",
+          }),
+        },
+      }),
+    },
+  }),
+  // update single task conclusion
+  ...generateEndpoint({
+    endpoint: "/actions/task_event/request_template/{templateId}",
+    methods: {
+      ...generatePath({
+        method: "patch",
+        tags: ["webhooks"],
+        summary: "Update task event in system",
+        responses: {
+          ...createResponse({
+            status: "200",
+            description: "OK",
+            schemaRef: "#/components/schemas/WebHooksTaskEventTableSchema",
+          }),
+        },
+        requestBody: createRequestBody({
+          description: "Request payload to update task event",
+          required: true,
+          contentRef: "#/components/schemas/WebHooksTaskEventFormSchema",
+        }),
+        parameters: [createPathParameter(templateIdParam)],
+      }),
+    },
+  }),
+  // bulk update task conclusion
+  ...generateEndpoint({
+    endpoint: "/actions/task_event/request_template/bulk",
+    methods: {
+      ...generatePath({
+        method: "patch",
+        tags: ["webhooks"],
+        summary: "Bulk Update task events in system",
+        requestBody: createRequestBody({
+          description: "Request payload to bulk update task events",
+          required: true,
+          contentRef:
+            "#/components/requestBodies/bulkEditWebHooksTaskEventsPayload",
+        }),
+        responses: {
+          ...createResponse({
+            status: "200",
+            description: "OK",
+            schemaRef: "#/components/schemas/WebHooksTaskEventFormSchema",
+          }),
+        },
+      }),
+    },
+  }),
 };
 module.exports = paths;

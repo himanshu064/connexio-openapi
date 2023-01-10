@@ -58,6 +58,24 @@ const bulkEditWebHooksTaskConclusionPayload = {
   },
 };
 
+const deleteWebHooksTaskEventsPayload = {
+  title: "",
+  type: "array",
+  items: [42],
+};
+
+const bulkEditWebHooksTaskEventsPayload = {
+  title: "",
+  type: "object",
+  properties: {
+    fields: WebHooksTaskConclusionStartedFormSchema,
+    objects: {
+      type: "array",
+      items: [2, 3],
+    },
+  },
+};
+
 module.exports = {
   deleteWebHooksTaskCompletedPayload,
   bulkEditWebHooksTaskCompletedPayload,
@@ -67,4 +85,7 @@ module.exports = {
 
   deleteWebHooksTaskConclusionPayload,
   bulkEditWebHooksTaskConclusionPayload,
+
+  deleteWebHooksTaskEventsPayload,
+  bulkEditWebHooksTaskEventsPayload,
 };
